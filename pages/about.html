@@ -1,0 +1,1240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | NovaTech Learning</title>
+
+    <meta name="description"
+        content="Meet Kavindhya Gothmini Thilakarathna, founder of NovaTech Learning, and discover a practical approach to software engineering and IT tutoring.">
+
+    <meta name="theme-color" content="#0b192b">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+
+    <!-- NovaTech Learning About Page Styles -->
+    <style>
+        :root {
+            --about-navy: #0b192b;
+            --about-navy-light: #122942;
+            --about-teal: #19c6b0;
+            --about-blue: #4c8dff;
+            --about-white: #ffffff;
+            --about-text: #d4dfeb;
+            --about-muted: #8fa4b9;
+            --about-border: rgba(160, 190, 215, 0.15);
+            --about-card: rgba(20, 43, 66, 0.78);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.inner-page {
+            background:
+                radial-gradient(ellipse at 10% 5%,
+                    rgba(25, 198, 176, 0.09), transparent 34%),
+                radial-gradient(ellipse at 95% 25%,
+                    rgba(76, 141, 255, 0.09), transparent 30%),
+                var(--about-navy);
+            color: var(--about-text);
+            font-family: "DM Sans", sans-serif;
+            overflow-x: clip;
+        }
+
+        .inner-container {
+            width: min(1180px, calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        /* NAVIGATION */
+
+        .inner-navbar {
+            position: relative;
+            z-index: 100;
+            width: 100%;
+            background: rgba(11, 25, 43, 0.92);
+            border-bottom: 1px solid var(--about-border);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            padding: 17px 0;
+        }
+
+        .inner-navbar .navbar-brand,
+        .inner-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        /* NOVATECH LOGO IMAGE */
+
+        .inner-brand-logo {
+            display: block;
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .inner-brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            line-height: 1.1;
+        }
+
+        .inner-brand-name {
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+        }
+
+        .inner-brand-subtitle {
+            color: var(--about-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 1.4px;
+        }
+
+        .inner-navbar .navbar-nav {
+            gap: 8px;
+        }
+
+        .inner-navbar .nav-link {
+            position: relative;
+            padding: 10px 13px !important;
+            color: #aebfd0;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        .inner-navbar .nav-link::after {
+            position: absolute;
+            right: 13px;
+            bottom: 3px;
+            left: 13px;
+            height: 2px;
+            background: var(--about-teal);
+            content: "";
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
+        .inner-navbar .nav-link:hover,
+        .inner-navbar .nav-link.active {
+            color: var(--about-white);
+        }
+
+        .inner-navbar .nav-link:hover::after,
+        .inner-navbar .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        .inner-navbar .navbar-toggler {
+            border: 1px solid var(--about-border);
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-shadow: none;
+        }
+
+        .inner-navbar .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(25, 198, 176, 0.18);
+        }
+
+        .inner-btn {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 21px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .inner-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .inner-btn-primary {
+            background: var(--about-teal);
+            color: var(--about-navy);
+            box-shadow: 0 8px 24px rgba(25, 198, 176, 0.12);
+        }
+
+        .inner-btn-primary:hover {
+            background: #58e2d0;
+            color: var(--about-navy);
+            box-shadow: 0 12px 30px rgba(25, 198, 176, 0.2);
+        }
+
+        .inner-btn-outline {
+            background: rgba(255, 255, 255, 0.025);
+            color: var(--about-white);
+            border-color: var(--about-border);
+        }
+
+        .inner-btn-outline:hover {
+            color: var(--about-teal);
+            border-color: var(--about-teal);
+            background: rgba(25, 198, 176, 0.06);
+        }
+
+        /* PAGE HERO */
+
+        .inner-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 105px 0 95px;
+            border-bottom: 1px solid var(--about-border);
+            background:
+                radial-gradient(circle at 80% 25%,
+                    rgba(25, 198, 176, 0.12), transparent 24%),
+                linear-gradient(135deg,
+                    rgba(18, 41, 66, 0.8),
+                    rgba(11, 25, 43, 0.25));
+        }
+
+        .inner-hero::before {
+            position: absolute;
+            z-index: -1;
+            top: -110px;
+            right: -80px;
+            width: 390px;
+            height: 390px;
+            border: 1px solid rgba(25, 198, 176, 0.15);
+            border-radius: 50%;
+            content: "";
+            box-shadow:
+                0 0 0 45px rgba(25, 198, 176, 0.025),
+                0 0 0 90px rgba(25, 198, 176, 0.018);
+        }
+
+        .inner-hero-content {
+            max-width: 790px;
+        }
+
+        .inner-kicker,
+        .inner-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--about-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .inner-kicker {
+            margin-bottom: 24px;
+        }
+
+        .inner-kicker::before,
+        .inner-label::before {
+            width: 24px;
+            height: 2px;
+            background: var(--about-teal);
+            content: "";
+        }
+
+        .inner-title {
+            margin: 0 0 24px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -2.7px;
+        }
+
+        .inner-title span,
+        .profile-content h2 span,
+        .inner-heading h2 span {
+            color: var(--about-teal);
+        }
+
+        .inner-description {
+            max-width: 650px;
+            margin: 0;
+            color: #a8bbce;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        /* SECTION SPACING */
+
+        .inner-section {
+            padding: 95px 0;
+        }
+
+        .inner-section-sm {
+            padding: 30px 0 100px;
+        }
+
+        /* PROFILE PANEL */
+
+        .profile-panel {
+            display: grid;
+            grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+            align-items: center;
+            gap: clamp(35px, 6vw, 78px);
+            padding: clamp(24px, 4vw, 48px);
+            overflow: hidden;
+            border: 1px solid var(--about-border);
+            border-radius: 24px;
+            background:
+                linear-gradient(135deg,
+                    rgba(23, 49, 73, 0.92),
+                    rgba(14, 31, 50, 0.9));
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+        }
+
+        .profile-image-wrap {
+            position: relative;
+            min-width: 0;
+            isolation: isolate;
+        }
+
+        .profile-image-wrap::before {
+            position: absolute;
+            z-index: -1;
+            top: -15px;
+            left: -15px;
+            width: 80px;
+            height: 80px;
+            border-top: 3px solid var(--about-teal);
+            border-left: 3px solid var(--about-teal);
+            border-radius: 12px 0 0;
+            content: "";
+        }
+
+        .profile-image-wrap::after {
+            position: absolute;
+            z-index: -1;
+            right: -12px;
+            bottom: -12px;
+            width: 110px;
+            height: 110px;
+            border-right: 2px solid rgba(76, 141, 255, 0.8);
+            border-bottom: 2px solid rgba(76, 141, 255, 0.8);
+            border-radius: 0 0 12px;
+            content: "";
+        }
+
+        .profile-image {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 4.5;
+            object-fit: cover;
+            object-position: center top;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 17px;
+            background: var(--about-navy-light);
+        }
+
+        .profile-content {
+            min-width: 0;
+        }
+
+        .profile-content .inner-label {
+            margin-bottom: 18px;
+        }
+
+        .profile-content h2 {
+            margin: 0 0 23px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(29px, 3.5vw, 43px);
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -1.4px;
+        }
+
+        .profile-content p {
+            margin-bottom: 16px;
+            color: #a8bbce;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .profile-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        /* TEACHING PHILOSOPHY */
+
+        .inner-heading {
+            max-width: 760px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .inner-heading .inner-label {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .inner-heading h2 {
+            margin: 0 0 20px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 800;
+            line-height: 1.22;
+            letter-spacing: -1.5px;
+        }
+
+        .inner-heading p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: var(--about-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .inner-card {
+            position: relative;
+            height: 100%;
+            padding: 32px 29px;
+            overflow: hidden;
+            border: 1px solid var(--about-border);
+            border-radius: 17px;
+            background: var(--about-card);
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .inner-card::after {
+            position: absolute;
+            top: 0;
+            left: 28px;
+            width: 45px;
+            height: 2px;
+            background: var(--about-teal);
+            content: "";
+            transition: width 0.3s ease;
+        }
+
+        .inner-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(25, 198, 176, 0.45);
+            background: rgba(24, 53, 77, 0.96);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .inner-card:hover::after {
+            width: 80px;
+        }
+
+        .inner-card-icon {
+            width: 56px;
+            height: 56px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 26px;
+            border: 1px solid rgba(25, 198, 176, 0.22);
+            border-radius: 15px;
+            background: rgba(25, 198, 176, 0.09);
+            color: var(--about-teal);
+            font-size: 24px;
+        }
+
+        .inner-card h3 {
+            margin: 0 0 14px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .inner-card p {
+            margin: 0;
+            color: var(--about-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* CALL TO ACTION */
+
+        .inner-cta {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: clamp(35px, 6vw, 70px) 25px;
+            border: 1px solid rgba(25, 198, 176, 0.24);
+            border-radius: 23px;
+            background:
+                radial-gradient(circle at 90% 0%,
+                    rgba(25, 198, 176, 0.14), transparent 32%),
+                linear-gradient(135deg,
+                    #142e46, #10243a);
+            text-align: center;
+        }
+
+        .inner-cta::before {
+            position: absolute;
+            z-index: -1;
+            top: -85px;
+            left: -60px;
+            width: 220px;
+            height: 220px;
+            border: 1px solid rgba(76, 141, 255, 0.18);
+            border-radius: 50%;
+            content: "";
+        }
+
+        .inner-cta .inner-label {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .inner-cta h2 {
+            max-width: 680px;
+            margin: 0 auto 20px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(29px, 4vw, 45px);
+            font-weight: 800;
+            line-height: 1.22;
+            letter-spacing: -1.3px;
+        }
+
+        .inner-cta p {
+            max-width: 610px;
+            margin: 0 auto 30px;
+            color: #a8bbce;
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* FOOTER */
+
+        .inner-footer {
+            padding: 70px 0 25px;
+            border-top: 1px solid var(--about-border);
+            background: #081522;
+        }
+
+        .inner-footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-decoration: none;
+        }
+
+        .inner-footer-logo {
+            display: block;
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            object-fit: contain;
+        }
+
+        .inner-footer-brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            line-height: 1.2;
+        }
+
+        .inner-footer-brand-text strong {
+            color: var(--about-white);
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+        }
+
+        .inner-footer-brand-text span {
+            color: var(--about-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.6px;
+        }
+
+        .inner-footer .col-lg-6 > p {
+            max-width: 440px;
+            color: var(--about-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .inner-footer h5 {
+            margin-bottom: 22px;
+            color: var(--about-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .inner-footer-links {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .inner-footer-links a {
+            color: var(--about-muted);
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .inner-footer-links a:hover {
+            padding-left: 4px;
+            color: var(--about-teal);
+        }
+
+        .inner-footer-bottom {
+            margin-top: 55px;
+            padding-top: 23px;
+            border-top: 1px solid var(--about-border);
+            color: #71869b;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+
+        @media (min-width: 992px) {
+            .inner-navbar .navbar-collapse {
+                flex-grow: 1;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .inner-navbar .navbar-collapse {
+                margin-top: 17px;
+                padding: 14px 0 5px;
+                border-top: 1px solid var(--about-border);
+            }
+
+            .inner-navbar .navbar-nav {
+                align-items: stretch !important;
+                gap: 4px;
+            }
+
+            .inner-navbar .nav-link {
+                padding: 11px 5px !important;
+            }
+
+            .inner-navbar .nav-link::after {
+                right: auto;
+                bottom: 5px;
+                left: 5px;
+                width: 26px;
+            }
+
+            .inner-navbar .nav-item.ms-lg-3 {
+                margin: 10px 0 0 !important;
+            }
+
+            .inner-navbar .nav-cta,
+            .inner-navbar .inner-btn {
+                width: fit-content;
+            }
+
+            .inner-hero {
+                padding: 80px 0 75px;
+            }
+
+            .profile-panel {
+                grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+                gap: 35px;
+            }
+
+            .profile-content h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .inner-container {
+                width: min(100% - 36px, 600px);
+            }
+
+            .inner-section {
+                padding: 70px 0;
+            }
+
+            .inner-section-sm {
+                padding: 10px 0 75px;
+            }
+
+            .inner-hero {
+                padding: 68px 0 65px;
+            }
+
+            .inner-title {
+                font-size: clamp(39px, 9vw, 58px);
+                letter-spacing: -1.8px;
+            }
+
+            .inner-description {
+                font-size: 15px;
+            }
+
+            .profile-panel {
+                grid-template-columns: 1fr;
+                gap: 36px;
+                padding: 25px;
+            }
+
+            .profile-image-wrap {
+                width: min(100%, 390px);
+                margin-inline: auto;
+            }
+
+            .profile-image {
+                aspect-ratio: 4 / 3.8;
+                object-position: center 25%;
+            }
+
+            .profile-content h2 {
+                font-size: clamp(30px, 7vw, 39px);
+            }
+
+            .inner-heading {
+                margin-bottom: 35px;
+            }
+
+            .inner-card {
+                padding: 28px 25px;
+            }
+
+            .inner-footer {
+                padding-top: 55px;
+            }
+
+            .inner-footer-bottom {
+                margin-top: 38px;
+                line-height: 1.8;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .inner-container {
+                width: calc(100% - 30px);
+            }
+
+            .inner-navbar {
+                padding: 13px 0;
+            }
+
+            .inner-brand-logo {
+                width: 40px;
+                height: 40px;
+            }
+
+            .inner-brand-name {
+                font-size: 13px;
+            }
+
+            .inner-brand-subtitle {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .inner-hero {
+                padding: 58px 0 55px;
+            }
+
+            .inner-kicker,
+            .inner-label {
+                font-size: 10px;
+                letter-spacing: 1.1px;
+            }
+
+            .inner-title {
+                font-size: clamp(35px, 10vw, 48px);
+                letter-spacing: -1.5px;
+            }
+
+            .inner-description {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+            .profile-panel {
+                padding: 20px;
+                border-radius: 18px;
+            }
+
+            .profile-content p {
+                font-size: 14px;
+            }
+
+            .profile-content .d-flex {
+                align-items: stretch;
+            }
+
+            .profile-content .inner-btn {
+                flex: 1 1 auto;
+            }
+
+            .inner-heading h2,
+            .inner-cta h2 {
+                font-size: 30px;
+                letter-spacing: -0.8px;
+            }
+
+            .inner-cta {
+                padding: 38px 20px;
+                border-radius: 18px;
+            }
+
+            .inner-cta p {
+                font-size: 14px;
+            }
+
+            .inner-footer-brand-text strong {
+                font-size: 14px;
+            }
+
+            .inner-footer-logo {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="inner-page">
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar navbar-expand-lg inner-navbar">
+        <div class="container inner-container">
+
+            <!-- NovaTech Learning Logo -->
+            <a href="../index.html"
+                class="inner-brand"
+                aria-label="NovaTech Learning Home">
+
+                <img
+                    src="../assets/images/novatech-logo.png"
+                    alt="NovaTech Learning logo"
+                    class="inner-brand-logo">
+
+                <span class="inner-brand-text">
+                    <span class="inner-brand-name">NOVATECH</span>
+                    <span class="inner-brand-subtitle">LEARNING</span>
+                </span>
+
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <i class="bi bi-list text-white fs-2"></i>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavigation">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="subjects.html">Subjects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="learning.html">Learning</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                            href="about.html"
+                            aria-current="page">About</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link"
+                               href="experience-education.html">Experience & Education</a>
+                        </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="contact.html"
+                            class="inner-btn inner-btn-primary">
+                            Start Learning
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="inner-hero">
+            <div class="inner-container">
+
+                <div class="inner-hero-content">
+
+                    <div class="inner-kicker">04 / About</div>
+
+                    <h1 class="inner-title">
+                        Meet the person<br>
+                        behind the <span>code.</span>
+                    </h1>
+
+                    <p class="inner-description">
+                        Software engineering knowledge, practical development
+                        experience and a passion for making technology easier
+                        to understand.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE -->
+
+        <section class="inner-section">
+            <div class="inner-container">
+
+                <div class="profile-panel">
+
+                    <div class="profile-image-wrap">
+                        <img
+                            src="../assets/images/profile.jpg"
+                            alt="Portrait of Kavindhya Gothmini Thilakarathna"
+                            class="profile-image"
+                            loading="lazy">
+                    </div>
+
+                    <div class="profile-content">
+
+                        <div class="inner-label">Your Tech Tutor</div>
+
+                        <h2>
+                            Kavindhya Gothmini
+                            <span>Thilakarathna</span>
+                        </h2>
+
+                        <p>
+                            I am a Software Engineering graduate with a strong
+                            interest in software development, IT and practical
+                            technology education.
+                        </p>
+
+                        <p>
+                            My approach to tutoring is simple:
+                            technology becomes easier when complicated
+                            concepts are broken down, explained clearly and
+                            connected to practical examples.
+                        </p>
+
+                        <p>
+                            Rather than focusing only on memorising syntax or
+                            following solutions, I encourage learners to
+                            understand the reasoning behind the technology
+                            and gradually become confident in solving problems
+                            independently.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+
+                            <a href="contact.html"
+                                class="inner-btn inner-btn-primary">
+                                Let's Connect
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                            <a href="projects.html"
+                                class="inner-btn inner-btn-outline">
+                                View Projects
+                                <i class="bi bi-grid"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEACHING PHILOSOPHY -->
+
+        <section class="inner-section">
+            <div class="inner-container">
+
+                <div class="inner-heading">
+
+                    <div class="inner-label">Teaching Philosophy</div>
+
+                    <h2>
+                        Explain it clearly.
+                        <span>Build it practically.</span>
+                    </h2>
+
+                    <p>
+                        Good technical education should help learners move
+                        from confusion to understanding and from understanding
+                        to independent practice.
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="inner-card">
+
+                            <div class="inner-card-icon">
+                                <i class="bi bi-chat-square-text"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <h3>Clear Explanations</h3>
+
+                            <p>
+                                Complex technical ideas are broken into
+                                smaller concepts using simple explanations
+                                and practical examples.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="inner-card">
+
+                            <div class="inner-card-icon">
+                                <i class="bi bi-code-square"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <h3>Practical Coding</h3>
+
+                            <p>
+                                Learning is connected to coding exercises,
+                                applications, databases and projects instead
+                                of remaining purely theoretical.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="inner-card">
+
+                            <div class="inner-card-icon">
+                                <i class="bi bi-person-check"
+                                    aria-hidden="true"></i>
+                            </div>
+
+                            <h3>Independent Thinking</h3>
+
+                            <p>
+                                The goal is not simply to provide answers,
+                                but to help learners understand how to find
+                                and create solutions themselves.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+
+        <section class="inner-section-sm">
+            <div class="inner-container">
+
+                <div class="inner-cta">
+
+                    <div class="inner-label">Your Learning Journey</div>
+
+                    <h2>
+                        Have a technology topic
+                        you're struggling with?
+                    </h2>
+
+                    <p>
+                        Let's turn the difficult part into something you can
+                        understand, practise and eventually build yourself.
+                    </p>
+
+                    <a href="contact.html"
+                        class="inner-btn inner-btn-primary">
+                        Start a Conversation
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="inner-footer">
+        <div class="inner-container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-6">
+
+                    <!-- NovaTech Learning Footer Logo -->
+                    <a href="../index.html"
+                        class="inner-footer-brand"
+                        aria-label="NovaTech Learning Home">
+
+                        <img
+                            src="../assets/images/novatech-logo.png"
+                            alt="NovaTech Learning logo"
+                            class="inner-footer-logo"
+                            loading="lazy">
+
+                        <span class="inner-footer-brand-text">
+                            <strong>NOVATECH</strong>
+                            <span>LEARNING</span>
+                        </span>
+
+                    </a>
+
+                    <p class="mt-3">
+                        Learn. Build. Grow. Practical technology learning
+                        for students who want to understand concepts,
+                        build projects and grow their technical confidence.
+                    </p>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <h5>Explore</h5>
+
+                    <ul class="inner-footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="subjects.html">Subjects</a></li>
+                        <li><a href="learning.html">Learning</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <h5>Connect</h5>
+
+                    <ul class="inner-footer-links">
+                        <li><a href="about.html">About Tutor</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/kavindhya-gothmini-thilakarathna"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                LinkedIn
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/kavindhya-gothmini"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                GitHub
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="inner-footer-bottom">
+                © 2026 NovaTech Learning. Learn. Build. Grow. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+
+</body>
+</html>
+

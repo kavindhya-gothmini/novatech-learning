@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Explore Kavindhya Gothmini Thilakarathna's software engineering education, IT experience, technical skills and teaching approach at NovaTech Learning.">
+
+    <meta name="author" content="Kavindhya Gothmini Thilakarathna">
+
+    <title>Experience & Education | NovaTech Learning</title>
+
+    <link rel="icon" type="image/png"
+          href="../assets/images/novatech-logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+
+    <!-- Existing website styles -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <style>
+        :root {
+            --ee-navy: #0b1730;
+            --ee-navy-light: #142746;
+            --ee-teal: #14b8a6;
+            --ee-teal-dark: #0f9488;
+            --ee-text: #24344d;
+            --ee-muted: #68778c;
+            --ee-light: #f5f8fc;
+            --ee-border: #e3eaf2;
+            --ee-white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--ee-white);
+            color: var(--ee-text);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .ee-container {
+            width: min(1140px, calc(100% - 40px));
+            margin-inline: auto;
+        }
+
+        /* NAVIGATION */
+
+        .ee-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 23, 48, 0.97);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .ee-nav-inner {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .ee-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+        }
+
+        .ee-brand img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+        }
+
+        .ee-brand-copy {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .ee-brand-name {
+            color: #ffffff;
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .ee-brand-tagline {
+            margin-top: 3px;
+            color: var(--ee-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 1.3px;
+        }
+
+        .ee-nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .ee-nav-links a {
+            color: #c8d3e2;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .ee-nav-links a:hover,
+        .ee-nav-links a.active {
+            color: var(--ee-teal);
+        }
+
+        .ee-nav-links .ee-nav-cta {
+            padding: 10px 16px;
+            border-radius: 7px;
+            background: var(--ee-teal);
+            color: var(--ee-navy);
+        }
+
+        .ee-nav-links .ee-nav-cta:hover {
+            background: #5eead4;
+            color: var(--ee-navy);
+        }
+
+        /* HERO */
+
+        .ee-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 88px 0 82px;
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(20,184,166,0.18),
+                    transparent 32%
+                ),
+                linear-gradient(135deg, #0b1730 0%, #132a49 100%);
+            color: #ffffff;
+        }
+
+        .ee-hero::after {
+            position: absolute;
+            right: -100px;
+            bottom: -230px;
+            width: 430px;
+            height: 430px;
+            border: 1px solid rgba(20,184,166,0.18);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .ee-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 20px;
+            color: var(--ee-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .ee-eyebrow::before {
+            width: 25px;
+            height: 2px;
+            background: var(--ee-teal);
+            content: "";
+        }
+
+        .ee-hero h1 {
+            max-width: 780px;
+            margin: 0 0 22px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(36px, 5.2vw, 60px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.15;
+        }
+
+        .ee-hero h1 span {
+            color: var(--ee-teal);
+        }
+
+        .ee-hero-description {
+            max-width: 680px;
+            margin: 0;
+            color: #c1cddd;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .ee-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-top: 30px;
+        }
+
+        .ee-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-height: 48px;
+            padding: 12px 20px;
+            border: 1px solid transparent;
+            border-radius: 7px;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .ee-button-primary {
+            background: var(--ee-teal);
+            color: var(--ee-navy);
+        }
+
+        .ee-button-primary:hover {
+            background: #5eead4;
+            color: var(--ee-navy);
+            transform: translateY(-2px);
+        }
+
+        .ee-button-outline {
+            border-color: rgba(255,255,255,0.25);
+            color: #ffffff;
+        }
+
+        .ee-button-outline:hover {
+            border-color: var(--ee-teal);
+            color: var(--ee-teal);
+        }
+
+        .ee-hero-note {
+            margin-top: 25px;
+            color: #a9b9ce;
+            font-size: 12px;
+        }
+
+        /* COMMON SECTION */
+
+        .ee-section {
+            padding: 85px 0;
+        }
+
+        .ee-section-light {
+            background: var(--ee-light);
+        }
+
+        .ee-section-heading {
+            max-width: 690px;
+            margin: 0 auto 45px;
+            text-align: center;
+        }
+
+        .ee-section-label {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--ee-teal-dark);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .ee-section-heading h2 {
+            margin: 0 0 15px;
+            color: var(--ee-navy);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.25;
+        }
+
+        .ee-section-heading p {
+            margin: 0;
+            color: var(--ee-muted);
+            font-size: 15px;
+        }
+
+        /* QUICK OVERVIEW */
+
+        .ee-overview {
+            position: relative;
+            z-index: 2;
+            margin-top: -1px;
+            padding: 0 0 15px;
+            background: var(--ee-white);
+        }
+
+        .ee-overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .ee-overview-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 23px;
+            border: 1px solid var(--ee-border);
+            border-radius: 12px;
+            background: #ffffff;
+            box-shadow: 0 8px 28px rgba(11,23,48,0.04);
+        }
+
+        .ee-overview-icon {
+            display: grid;
+            width: 46px;
+            height: 46px;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 10px;
+            background: #e5faf6;
+            color: var(--ee-teal-dark);
+            font-size: 21px;
+        }
+
+        .ee-overview-card h3 {
+            margin: 1px 0 5px;
+            color: var(--ee-navy);
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .ee-overview-card p {
+            margin: 0;
+            color: var(--ee-muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        /* TIMELINE */
+
+        .ee-timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+            padding-left: 35px;
+        }
+
+        .ee-timeline::before {
+            position: absolute;
+            top: 9px;
+            bottom: 15px;
+            left: 8px;
+            width: 2px;
+            background: #ccefe9;
+            content: "";
+        }
+
+        .ee-timeline-item {
+            position: relative;
+            margin-bottom: 26px;
+            padding: 27px 29px;
+            border: 1px solid var(--ee-border);
+            border-radius: 13px;
+            background: #ffffff;
+            box-shadow: 0 8px 28px rgba(11,23,48,0.035);
+        }
+
+        .ee-timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ee-timeline-item::before {
+            position: absolute;
+            top: 32px;
+            left: -34px;
+            width: 16px;
+            height: 16px;
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            background: var(--ee-teal);
+            box-shadow: 0 0 0 2px var(--ee-teal);
+            content: "";
+        }
+
+        .ee-card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .ee-card-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            place-items: center;
+            border-radius: 11px;
+            background: #e5faf6;
+            color: var(--ee-teal-dark);
+            font-size: 22px;
+        }
+
+        .ee-card-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .ee-card-heading h3 {
+            margin: 0 0 5px;
+            color: var(--ee-navy);
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .ee-card-institution {
+            margin: 0;
+            color: var(--ee-teal-dark);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .ee-card-date {
+            display: inline-block;
+            flex-shrink: 0;
+            padding: 6px 10px;
+            border-radius: 5px;
+            background: #eef3f8;
+            color: #52647a;
+            font-family: "Space Mono", monospace;
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .ee-card-description {
+            margin: 19px 0 0;
+            color: var(--ee-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .ee-detail-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 11px 20px;
+            margin: 19px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .ee-detail-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            color: #52647a;
+            font-size: 13px;
+        }
+
+        .ee-detail-list i {
+            margin-top: 4px;
+            color: var(--ee-teal-dark);
+        }
+
+        .ee-card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .ee-tag {
+            padding: 5px 10px;
+            border: 1px solid #d8e9e8;
+            border-radius: 5px;
+            background: #f1fbf9;
+            color: #24786f;
+            font-family: "Space Mono", monospace;
+            font-size: 10px;
+        }
+
+        /* TEACHING APPROACH */
+
+        .ee-approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .ee-approach-card {
+            padding: 28px 25px;
+            border: 1px solid var(--ee-border);
+            border-radius: 12px;
+            background: #ffffff;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .ee-approach-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(11,23,48,0.08);
+        }
+
+        .ee-approach-number {
+            display: inline-block;
+            margin-bottom: 23px;
+            color: var(--ee-teal-dark);
+            font-family: "Space Mono", monospace;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .ee-approach-card h3 {
+            margin-bottom: 11px;
+            color: var(--ee-navy);
+            font-family: "Manrope", sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .ee-approach-card p {
+            margin: 0;
+            color: var(--ee-muted);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .ee-cta {
+            padding: 70px 0;
+            background: var(--ee-navy);
+            color: #ffffff;
+        }
+
+        .ee-cta-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .ee-cta h2 {
+            margin: 0 0 12px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(27px, 4vw, 38px);
+            font-weight: 800;
+        }
+
+        .ee-cta p {
+            max-width: 600px;
+            margin: 0;
+            color: #b9c8d9;
+            font-size: 15px;
+        }
+
+        /* FOOTER */
+
+        .ee-footer {
+            padding: 27px 0;
+            background: #071124;
+            color: #9bacc2;
+        }
+
+        .ee-footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .ee-footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ee-footer-brand img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        .ee-footer-brand span {
+            color: #ffffff;
+            font-family: "Manrope", sans-serif;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .ee-footer p {
+            margin: 0;
+            font-size: 12px;
+        }
+
+        .ee-footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 17px;
+        }
+
+        .ee-footer-links a {
+            color: #b9c8d9;
+            font-size: 12px;
+        }
+
+        .ee-footer-links a:hover {
+            color: var(--ee-teal);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991.98px) {
+            .ee-nav-inner {
+                padding: 15px 0;
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .ee-nav-links {
+                justify-content: flex-start;
+                gap: 12px 18px;
+            }
+
+            .ee-overview-grid,
+            .ee-approach-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ee-overview-card {
+                padding: 20px;
+            }
+
+            .ee-cta-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .ee-section {
+                padding: 65px 0;
+            }
+
+            .ee-hero {
+                padding: 66px 0;
+            }
+
+            .ee-hero-description {
+                font-size: 15px;
+            }
+
+            .ee-card-top {
+                flex-direction: column;
+            }
+
+            .ee-card-date {
+                margin-left: 63px;
+            }
+
+            .ee-detail-list {
+                grid-template-columns: 1fr;
+            }
+
+            .ee-timeline {
+                padding-left: 27px;
+            }
+
+            .ee-timeline-item {
+                padding: 22px 19px;
+            }
+
+            .ee-timeline-item::before {
+                left: -26px;
+            }
+
+            .ee-timeline::before {
+                left: 7px;
+            }
+
+            .ee-card-heading h3 {
+                font-size: 17px;
+            }
+
+            .ee-footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .ee-container {
+                width: min(100% - 28px, 1140px);
+            }
+
+            .ee-brand img {
+                width: 40px;
+                height: 40px;
+            }
+
+            .ee-brand-name {
+                font-size: 13px;
+            }
+
+            .ee-brand-tagline {
+                font-size: 8px;
+            }
+
+            .ee-nav-links {
+                gap: 11px 14px;
+            }
+
+            .ee-nav-links a {
+                font-size: 12px;
+            }
+
+            .ee-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .ee-card-heading {
+                gap: 11px;
+            }
+
+            .ee-card-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 19px;
+            }
+
+            .ee-card-date {
+                margin-left: 53px;
+            }
+
+            .ee-hero-actions .ee-button {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="ee-navbar">
+        <div class="ee-container ee-nav-inner">
+
+            <a href="../index.html" class="ee-brand"
+               aria-label="NovaTech Learning home">
+
+                <img src="../assets/images/novatech-logo.png"
+                     alt="NovaTech Learning logo">
+
+                <span class="ee-brand-copy">
+                    <span class="ee-brand-name">NOVATECH</span>
+                    <span class="ee-brand-tagline">LEARN. BUILD. GROW.</span>
+                </span>
+            </a>
+
+          <nav class="ee-nav-links" aria-label="Main navigation">
+    <a href="../index.html">Home</a>
+    <a href="subjects.html">Subjects</a>
+    <a href="learning.html">Learning</a>
+    <a href="projects.html">Projects</a>
+
+    <a href="experience-education.html"
+       class="active"
+       aria-current="page">
+        Experience &amp; Education
+    </a>
+
+    <a href="about.html">About</a>
+    <a href="contact.html" class="ee-nav-cta">Contact</a>
+</nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="ee-hero">
+            <div class="ee-container">
+
+                <span class="ee-eyebrow">My professional journey</span>
+
+                <h1>
+                    Education, experience<br>
+                    and a passion for <span>technology.</span>
+                </h1>
+
+                <p class="ee-hero-description">
+                    Explore the academic foundation, practical IT experience
+                    and learning philosophy behind NovaTech Learning.
+                    My goal is to make technology easier to understand
+                    through clear explanations and practical learning.
+                </p>
+
+                <div class="ee-hero-actions">
+                    <a href="#education" class="ee-button ee-button-primary">
+                        <i class="bi bi-mortarboard"></i>
+                        Explore Education
+                    </a>
+
+                    <a href="#experience" class="ee-button ee-button-outline">
+                        <i class="bi bi-briefcase"></i>
+                        View Experience
+                    </a>
+                </div>
+
+                <p class="ee-hero-note">
+                    <i class="bi bi-code-slash"></i>
+                    Software Engineering · IT · Practical Learning
+                </p>
+
+            </div>
+        </section>
+
+        <!-- OVERVIEW -->
+        <section class="ee-overview" aria-label="Professional overview">
+            <div class="ee-container">
+
+                <div class="ee-overview-grid">
+
+                    <article class="ee-overview-card">
+                        <div class="ee-overview-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <div>
+                            <h3>Academic Foundation</h3>
+                            <p>
+                                Software engineering education and
+                                technical knowledge.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="ee-overview-card">
+                        <div class="ee-overview-icon">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <div>
+                            <h3>Practical IT Experience</h3>
+                            <p>
+                                Exposure to software development,
+                                databases and IT operations.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="ee-overview-card">
+                        <div class="ee-overview-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3>Learning Philosophy</h3>
+                            <p>
+                                Understand concepts, practise skills
+                                and build useful projects.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section class="ee-section ee-section-light" id="education">
+            <div class="ee-container">
+
+                <div class="ee-section-heading">
+                    <span class="ee-section-label">01 / Academic background</span>
+                    <h2>Education & Qualifications</h2>
+                    <p>
+                        My academic journey has developed my foundation
+                        in software engineering, programming and computing.
+                    </p>
+                </div>
+
+                <div class="ee-timeline">
+
+                    <article class="ee-timeline-item">
+
+                        <div class="ee-card-top">
+                            <div class="ee-card-heading">
+
+                                <div class="ee-card-icon">
+                                    <i class="bi bi-mortarboard"></i>
+                                </div>
+
+                                <div>
+                                    <h3>BEng (Hons) Software Engineering</h3>
+                                    <p class="ee-card-institution">
+                                        London Metropolitan University
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <span class="ee-card-date">
+                                COMPLETED 2025
+                            </span>
+                        </div>
+
+                        <p class="ee-card-description">
+                            I successfully completed my BEng (Hons) in Software Engineering from London Metropolitan University, United Kingdom, achieving Second Class Honours (Upper Division). This degree strengthened my knowledge of software development, software engineering principles, database management, web technologies, and system design. It also enhanced my analytical thinking, problem-solving, and practical software development skills, providing a strong foundation for my professional career in the IT industry.
+
+                        </p>
+
+                        <ul class="ee-detail-list">
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Software engineering principles
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Programming and application development
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Database and system concepts
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Analytical and problem-solving skills
+                            </li>
+                        </ul>
+
+                        <div class="ee-card-tags">
+                            <span class="ee-tag">Software Engineering</span>
+                            <span class="ee-tag">System Design</span>
+                            <span class="ee-tag">Programming</span>
+                        </div>
+
+                    </article>
+
+                    <article class="ee-timeline-item">
+
+                        <div class="ee-card-top">
+                            <div class="ee-card-heading">
+
+                                <div class="ee-card-icon">
+                                    <i class="bi bi-journal-code"></i>
+                                </div>
+
+                                <div>
+                                    <h3>HND / Level 5 Qualification</h3>
+                                    <p class="ee-card-institution">
+                                        ESOFT Metro Campus
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <span class="ee-card-date">
+                                COMPLETED 2024
+                            </span>
+                        </div>
+
+                        <p class="ee-card-description">
+                            Completed a Level 5 qualification through
+                            ESOFT Metro Campus, building foundational
+                            knowledge in computing and software-related
+                            subjects before progressing to the honours
+                            degree.
+                        </p>
+
+                        <div class="ee-card-tags">
+                            <span class="ee-tag">Computing</span>
+                            <span class="ee-tag">Technical Foundation</span>
+                            <span class="ee-tag">Application Development</span>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="ee-section" id="experience">
+            <div class="ee-container">
+
+                <div class="ee-section-heading">
+                    <span class="ee-section-label">02 / Professional journey</span>
+                    <h2>Practical IT Experience</h2>
+                    <p>
+                        Applying technical knowledge in a professional
+                        IT environment and learning how software and
+                        infrastructure support real organisations.
+                    </p>
+                </div>
+
+                <div class="ee-timeline">
+
+                    <article class="ee-timeline-item">
+
+                        <div class="ee-card-top">
+                            <div class="ee-card-heading">
+
+                                <div class="ee-card-icon">
+                                    <i class="bi bi-building-gear"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Software Engineering & Network Intern</h3>
+                                    <p class="ee-card-institution">
+                                        Ceylon Petroleum Corporation (CPC)
+                                        · Head Office IT Function
+                                    </p>
+                                </div>
+
+                            </div>
+
+                            <span class="ee-card-date">
+                                2026
+                            </span>
+                        </div>
+
+                        <p class="ee-card-description">
+                            Gaining practical exposure to software
+                            development, IT operations and network-related
+                            activities within a corporate IT environment.
+                        </p>
+
+                        <ul class="ee-detail-list">
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Developing an IT asset and inventory
+                                management system
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Working with Laravel, PHP and MySQL
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Implementing database operations and
+                                application workflows
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Supporting IP configuration and
+                                network-related tasks
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Installing software and assisting with
+                                IT troubleshooting
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Preparing technical documentation
+                                and supporting IT activities
+                            </li>
+                        </ul>
+
+                        <div class="ee-card-tags">
+                            <span class="ee-tag">Laravel</span>
+                            <span class="ee-tag">PHP</span>
+                            <span class="ee-tag">MySQL</span>
+                            <span class="ee-tag">JavaScript</span>
+                            <span class="ee-tag">Bootstrap</span>
+                            <span class="ee-tag">Networking</span>
+                            <span class="ee-tag">IT Support</span>
+                        </div>
+
+                    </article>
+
+                    <article class="ee-timeline-item">
+
+                        <div class="ee-card-top">
+                            <div class="ee-card-heading">
+
+                                <div class="ee-card-icon">
+                                    <i class="bi bi-window-stack"></i>
+                                </div>
+
+                                <div>
+                                    <h3>Software & Web Development Projects</h3>
+                                    <p class="ee-card-institution">
+                                        Academic and Personal Projects
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <p class="ee-card-description">
+                            Building practical projects to apply software
+                            engineering concepts, develop technical
+                            confidence and demonstrate programming and
+                            web development skills.
+                        </p>
+
+                        <ul class="ee-detail-list">
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Responsive website development
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Database-driven application development
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                User interface and usability improvements
+                            </li>
+                            <li>
+                                <i class="bi bi-check-circle-fill"></i>
+                                Project documentation and testing
+                            </li>
+                        </ul>
+
+                        <div class="ee-card-tags">
+                            <span class="ee-tag">HTML</span>
+                            <span class="ee-tag">CSS</span>
+                            <span class="ee-tag">JavaScript</span>
+                            <span class="ee-tag">PHP</span>
+                            <span class="ee-tag">Laravel</span>
+                            <span class="ee-tag">MySQL</span>
+                        </div>
+
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- TEACHING APPROACH -->
+        <section class="ee-section ee-section-light" id="approach">
+            <div class="ee-container">
+
+                <div class="ee-section-heading">
+                    <span class="ee-section-label">03 / Learning philosophy</span>
+                    <h2>How I Approach Learning</h2>
+                    <p>
+                        NovaTech Learning is built around making technical
+                        subjects clearer, more practical and easier to explore.
+                    </p>
+                </div>
+
+                <div class="ee-approach-grid">
+
+                    <article class="ee-approach-card">
+                        <span class="ee-approach-number">01 / UNDERSTAND</span>
+                        <h3>Clear Explanations</h3>
+                        <p>
+                            Break complex technical ideas into manageable
+                            steps, using examples to explain how and why
+                            concepts work.
+                        </p>
+                    </article>
+
+                    <article class="ee-approach-card">
+                        <span class="ee-approach-number">02 / PRACTISE</span>
+                        <h3>Hands-on Exercises</h3>
+                        <p>
+                            Reinforce learning through coding exercises,
+                            database practice, problem-solving and
+                            guided technical activities.
+                        </p>
+                    </article>
+
+                    <article class="ee-approach-card">
+                        <span class="ee-approach-number">03 / BUILD</span>
+                        <h3>Practical Projects</h3>
+                        <p>
+                            Connect theory with application by exploring
+                            project workflows, development techniques
+                            and real-world use cases.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="ee-cta">
+            <div class="ee-container ee-cta-inner">
+
+                <div>
+                    <h2>Ready to explore technology?</h2>
+                    <p>
+                        Discover the subjects and practical learning
+                        resources available through NovaTech Learning.
+                    </p>
+                </div>
+
+                <a href="contact.html" class="ee-button ee-button-primary">
+                    Get in Touch
+                    <i class="bi bi-arrow-up-right"></i>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="ee-footer">
+        <div class="ee-container ee-footer-inner">
+
+            <a href="../index.html" class="ee-footer-brand">
+                <img src="../assets/images/novatech-logo.png"
+                     alt="NovaTech Learning logo"
+                     loading="lazy">
+                <span>NovaTech Learning</span>
+            </a>
+
+            <p>
+                © <span id="currentYear"></span> NovaTech Learning.
+                Learn. Build. Grow.
+            </p>
+
+            <nav class="ee-footer-links" aria-label="Footer navigation">
+                <a href="../index.html">Home</a>
+                <a href="subjects.html">Subjects</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

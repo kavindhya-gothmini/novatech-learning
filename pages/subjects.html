@@ -1,0 +1,1523 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Explore NovaTech Learning subjects: programming, web development, C# desktop applications, databases, software engineering, IT fundamentals and data science. Learn. Build. Grow.">
+
+    <meta name="author" content="Kavindhya Gothmini Thilakarathna">
+    <meta name="theme-color" content="#080f1c">
+
+    <title>Subjects | NovaTech Learning</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+
+    <style>
+        :root {
+            --nova-navy: #080f1c;
+            --nova-navy-light: #101c2e;
+            --nova-teal: #19c6b0;
+            --nova-teal-light: #75f0dc;
+            --nova-white: #f4f8fb;
+            --nova-muted: #a3b0bf;
+            --nova-border: rgba(255, 255, 255, .11);
+            --nova-panel: rgba(255, 255, 255, .035);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            background: var(--nova-navy);
+            color: var(--nova-white);
+            font-family: "DM Sans", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .inner-page {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* BRAND AND LOGO */
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            display: block;
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .brand-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            line-height: 1.1;
+        }
+
+        .brand-content strong {
+            color: #fff;
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+        }
+
+        .brand-content small {
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+        }
+
+        .loader-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-logo img {
+            display: block;
+            width: 68px;
+            height: 68px;
+            object-fit: contain;
+        }
+
+        /* HERO */
+
+        .inner-hero {
+            padding: 165px 0 100px;
+            position: relative;
+        }
+
+        .inner-hero-layout {
+            display: grid;
+            grid-template-columns: 1.15fr .85fr;
+            gap: 65px;
+            align-items: center;
+        }
+
+        .inner-kicker,
+        .section-kicker {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            line-height: 1.8;
+        }
+
+        .inner-kicker span,
+        .section-kicker span {
+            color: var(--nova-muted);
+            opacity: .7;
+        }
+
+        .inner-hero h1 {
+            margin: 0 0 25px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(43px, 6vw, 78px);
+            line-height: 1.03;
+            font-weight: 800;
+            letter-spacing: -3.5px;
+        }
+
+        .inner-hero h1 span {
+            display: block;
+            color: var(--nova-teal);
+        }
+
+        .inner-hero-description {
+            max-width: 620px;
+            color: var(--nova-muted);
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .btn-primary-custom {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border: 1px solid var(--nova-teal);
+            border-radius: 4px;
+            background: var(--nova-teal);
+            color: #06141a;
+            font-size: 14px;
+            font-weight: 700;
+            transition: transform .25s ease, background .25s ease;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            background: var(--nova-teal-light);
+            border-color: var(--nova-teal-light);
+            color: #06141a;
+        }
+
+        .btn-text-custom {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--nova-white);
+            font-size: 14px;
+            font-weight: 600;
+            transition: color .25s ease;
+        }
+
+        .btn-text-custom:hover {
+            color: var(--nova-teal);
+        }
+
+        /* HERO VISUAL */
+
+        .subject-hero-card {
+            position: relative;
+            min-height: 370px;
+            padding: 32px;
+            border: 1px solid var(--nova-border);
+            border-radius: 8px;
+            background:
+                radial-gradient(circle at 90% 10%, rgba(25, 198, 176, .15), transparent 35%),
+                linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
+            overflow: hidden;
+        }
+
+        .subject-hero-card::after {
+            content: "</>";
+            position: absolute;
+            right: 18px;
+            bottom: -25px;
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 125px;
+            font-weight: 700;
+            opacity: .055;
+            pointer-events: none;
+        }
+
+        .subject-hero-number {
+            color: var(--nova-muted);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 1.7px;
+        }
+
+        .subject-hero-icon {
+            width: 82px;
+            height: 82px;
+            margin: 65px 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(25, 198, 176, .35);
+            border-radius: 8px;
+            background: rgba(25, 198, 176, .08);
+            color: var(--nova-teal);
+            font-size: 37px;
+        }
+
+        .subject-hero-card h3 {
+            margin-bottom: 12px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(23px, 3vw, 29px);
+            font-weight: 800;
+        }
+
+        .subject-hero-card p {
+            max-width: 390px;
+            margin: 0;
+            color: var(--nova-muted);
+            line-height: 1.8;
+        }
+
+        .hero-mini-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 25px;
+        }
+
+        .hero-mini-tags span {
+            padding: 6px 9px;
+            border: 1px solid var(--nova-border);
+            border-radius: 3px;
+            color: #d5e1e9;
+            font-family: "Space Mono", monospace;
+            font-size: 10px;
+        }
+
+        /* INTRO */
+
+        .subjects-intro {
+            padding: 35px 0 75px;
+        }
+
+        .subjects-intro-grid {
+            display: grid;
+            grid-template-columns: .7fr 1.3fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .subjects-intro-label {
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 1.8px;
+        }
+
+        .subjects-intro h2 {
+            margin: 0;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(31px, 4.5vw, 55px);
+            line-height: 1.15;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .subjects-intro h2 span {
+            color: var(--nova-teal);
+        }
+
+        /* SUBJECT CARDS */
+
+        .detailed-subjects {
+            padding: 20px 0 105px;
+        }
+
+        .detailed-subject-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .detailed-subject-card {
+            position: relative;
+            min-height: 400px;
+            padding: 30px;
+            padding-bottom: 85px;
+            border: 1px solid var(--nova-border);
+            border-radius: 7px;
+            background: var(--nova-panel);
+            transition: transform .3s ease, border-color .3s ease, background .3s ease;
+            overflow: hidden;
+        }
+
+        .detailed-subject-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(25, 198, 176, .5);
+            background: rgba(25, 198, 176, .035);
+        }
+
+        .detailed-subject-card.featured {
+            background:
+                linear-gradient(145deg, rgba(25,198,176,.09), transparent 70%),
+                var(--nova-panel);
+        }
+
+        .subject-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .subject-card-number {
+            color: var(--nova-muted);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+
+        .subject-card-icon {
+            width: 55px;
+            height: 55px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(25, 198, 176, .25);
+            border-radius: 6px;
+            background: rgba(25, 198, 176, .07);
+            color: var(--nova-teal);
+            font-size: 24px;
+        }
+
+        .subject-card-category {
+            display: block;
+            margin-top: 38px;
+            margin-bottom: 12px;
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 1.8px;
+        }
+
+        .detailed-subject-card h3 {
+            margin-bottom: 15px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(24px, 3vw, 31px);
+            font-weight: 800;
+            letter-spacing: -.8px;
+        }
+
+        .detailed-subject-card > p {
+            max-width: 540px;
+            margin-bottom: 23px;
+            color: var(--nova-muted);
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        .subject-topics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .subject-topics span {
+            padding: 7px 9px;
+            border: 1px solid var(--nova-border);
+            border-radius: 3px;
+            color: #c5d2dd;
+            font-family: "Space Mono", monospace;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .subject-card-footer {
+            position: absolute;
+            right: 25px;
+            bottom: 24px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(25, 198, 176, .35);
+            border-radius: 4px;
+            color: var(--nova-teal);
+            transition: transform .3s ease, background .3s ease, color .3s ease;
+        }
+
+        .detailed-subject-card:hover .subject-card-footer {
+            transform: translate(2px, -2px);
+            background: var(--nova-teal);
+            color: var(--nova-navy);
+        }
+
+        /* LEARNING PATH */
+
+        .learning-path-section {
+            padding: 100px 0;
+            border-top: 1px solid var(--nova-border);
+            border-bottom: 1px solid var(--nova-border);
+            background: rgba(255,255,255,.012);
+        }
+
+        .learning-path-header {
+            max-width: 760px;
+            margin-bottom: 50px;
+        }
+
+        .learning-path-header h2 {
+            margin: 18px 0;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(35px, 5vw, 60px);
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .learning-path-header h2 span {
+            color: var(--nova-teal);
+        }
+
+        .learning-path-header p {
+            max-width: 650px;
+            color: var(--nova-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .learning-path-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1px;
+            border: 1px solid var(--nova-border);
+            background: var(--nova-border);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .path-item {
+            min-height: 225px;
+            padding: 25px;
+            background: var(--nova-navy);
+        }
+
+        .path-item-number {
+            color: var(--nova-muted);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+        }
+
+        .path-item-icon {
+            margin: 35px 0 18px;
+            color: var(--nova-teal);
+            font-size: 26px;
+        }
+
+        .path-item h3 {
+            margin-bottom: 9px;
+            font-family: "Manrope", sans-serif;
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .path-item p {
+            margin: 0;
+            color: var(--nova-muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .subjects-page-cta {
+            padding: 100px 0;
+        }
+
+        .subjects-cta-box {
+            position: relative;
+            padding: 65px;
+            border: 1px solid rgba(25, 198, 176, .25);
+            border-radius: 7px;
+            background:
+                radial-gradient(circle at 100% 0%, rgba(25,198,176,.12), transparent 38%),
+                linear-gradient(135deg, rgba(25,198,176,.055), rgba(255,255,255,.015));
+            overflow: hidden;
+        }
+
+        .subjects-cta-box::after {
+            content: "</learn>";
+            position: absolute;
+            right: 20px;
+            bottom: -20px;
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: clamp(45px, 8vw, 90px);
+            opacity: .06;
+            pointer-events: none;
+        }
+
+        .subjects-cta-box h2 {
+            max-width: 750px;
+            margin-bottom: 20px;
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(36px, 5vw, 62px);
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .subjects-cta-box h2 span {
+            color: var(--nova-teal);
+        }
+
+        .subjects-cta-box p {
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: var(--nova-muted);
+            line-height: 1.9;
+        }
+
+        /* FOOTER */
+
+        .site-footer {
+            border-top: 1px solid var(--nova-border);
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+            gap: 35px;
+            padding-top: 65px;
+            padding-bottom: 50px;
+        }
+
+        .footer-brand p {
+            max-width: 290px;
+            margin: 20px 0;
+            color: var(--nova-muted);
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-socials a {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--nova-border);
+            border-radius: 4px;
+            color: var(--nova-white);
+            transition: color .2s ease, border-color .2s ease;
+        }
+
+        .footer-socials a:hover {
+            border-color: var(--nova-teal);
+            color: var(--nova-teal);
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 13px;
+            min-width: 0;
+        }
+
+        .footer-column > span {
+            margin-bottom: 8px;
+            color: var(--nova-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 10px;
+            letter-spacing: 1.5px;
+        }
+
+        .footer-column a,
+        .footer-column p {
+            margin: 0;
+            color: var(--nova-muted);
+            font-size: 13px;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+            transition: color .2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--nova-teal);
+        }
+
+        .footer-contact a {
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 22px 0;
+            border-top: 1px solid var(--nova-border);
+            color: var(--nova-muted);
+            font-size: 11px;
+            line-height: 1.7;
+        }
+
+        /* BACK TO TOP */
+
+        .back-to-top {
+            z-index: 1000;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 991px) {
+            .inner-hero {
+                padding-top: 140px;
+            }
+
+            .inner-hero-layout {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .subject-hero-card {
+                min-height: auto;
+            }
+
+            .subject-hero-icon {
+                margin-top: 40px;
+            }
+
+            .subjects-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 22px;
+            }
+
+            .learning-path-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .footer-main {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 767px) {
+            .inner-hero {
+                padding: 120px 0 65px;
+            }
+
+            .inner-hero h1 {
+                font-size: clamp(40px, 11vw, 60px);
+                letter-spacing: -2px;
+            }
+
+            .inner-hero-description {
+                font-size: 15px;
+            }
+
+            .subject-hero-card {
+                padding: 25px;
+            }
+
+            .subject-hero-icon {
+                width: 68px;
+                height: 68px;
+                margin: 38px 0 22px;
+                font-size: 30px;
+            }
+
+            .subjects-intro {
+                padding: 20px 0 55px;
+            }
+
+            .subjects-intro h2 {
+                font-size: clamp(31px, 8vw, 43px);
+                letter-spacing: -1.3px;
+            }
+
+            .detailed-subjects {
+                padding-bottom: 70px;
+            }
+
+            .detailed-subject-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .detailed-subject-card {
+                min-height: auto;
+                padding: 25px;
+                padding-bottom: 80px;
+            }
+
+            .subject-card-category {
+                margin-top: 30px;
+            }
+
+            .detailed-subject-card h3 {
+                font-size: 27px;
+            }
+
+            .learning-path-section {
+                padding: 70px 0;
+            }
+
+            .learning-path-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .path-item {
+                min-height: auto;
+                padding: 24px;
+            }
+
+            .path-item-icon {
+                margin: 22px 0 12px;
+            }
+
+            .subjects-page-cta {
+                padding: 70px 0;
+            }
+
+            .subjects-cta-box {
+                padding: 38px 25px;
+            }
+
+            .subjects-cta-box h2 {
+                font-size: clamp(34px, 9vw, 48px);
+                letter-spacing: -1.2px;
+            }
+
+            .subjects-cta-box::after {
+                font-size: 45px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr 1fr;
+                gap: 35px 22px;
+                padding-top: 45px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .brand {
+                gap: 8px;
+            }
+
+            .brand-logo {
+                width: 38px;
+                height: 38px;
+            }
+
+            .brand-content strong {
+                font-size: 12px;
+                letter-spacing: .8px;
+            }
+
+            .brand-content small {
+                font-size: 8px;
+                letter-spacing: 1.2px;
+            }
+
+            .hero-actions {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            .btn-primary-custom {
+                max-width: 100%;
+                font-size: 13px;
+            }
+
+            .detailed-subject-card {
+                padding: 22px;
+                padding-bottom: 76px;
+            }
+
+            .subject-topics span {
+                font-size: 9px;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <img src="../assets/images/novatech-logo.png"
+                    alt="NovaTech Learning logo">
+            </div>
+
+            <div class="loader-line">
+                <span></span>
+            </div>
+
+            <p>LOADING SUBJECTS</p>
+        </div>
+    </div>
+
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- BACKGROUND -->
+    <div class="background-system" aria-hidden="true">
+        <div class="gradient-orb orb-one"></div>
+        <div class="gradient-orb orb-two"></div>
+        <div class="gradient-orb orb-three"></div>
+        <div class="grid-background"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <!-- NovaTech Learning Brand -->
+                <a href="../index.html" class="brand"
+                    aria-label="NovaTech Learning home">
+                    <img src="../assets/images/novatech-logo.png"
+                        alt="NovaTech Learning logo"
+                        class="brand-logo">
+
+                    <span class="brand-content">
+                        <strong>NOVATECH</strong>
+                        <small>LEARNING</small>
+                    </span>
+                </a>
+
+                <!-- Mobile menu -->
+                <button class="navbar-toggler custom-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNavigation"
+                    aria-controls="mainNavigation"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse" id="mainNavigation">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active"
+                                href="subjects.html"
+                                aria-current="page">Subjects</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="learning.html">Learning</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="experience-education.html">Experience & Education</a>
+                        </li>
+
+                        <li class="nav-item nav-cta-item">
+                            <a href="contact.html" class="nav-cta">
+                                <span>Start Learning</span>
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="inner-page">
+
+        <!-- HERO -->
+        <section class="inner-hero">
+            <div class="container">
+                <div class="inner-hero-layout">
+
+                    <div>
+                        <div class="inner-kicker">
+                            <span>/ 02</span>
+                            WHAT I TEACH
+                        </div>
+
+                        <h1>
+                            Build your
+                            <span>technical foundation.</span>
+                        </h1>
+
+                        <p class="inner-hero-description">
+                            Explore practical technology subjects designed
+                            to help you understand concepts, develop useful
+                            technical skills and confidently build your own
+                            projects.
+                        </p>
+
+                        <div class="hero-actions mt-4">
+                            <a href="#subjects-list" class="btn-primary-custom">
+                                Explore Subjects
+                                <i class="bi bi-arrow-down"></i>
+                            </a>
+
+                            <a href="contact.html" class="btn-text-custom">
+                                Discuss Your Goals
+                                <i class="bi bi-arrow-up-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="subject-hero-card">
+                        <span class="subject-hero-number">
+                            LEARNING FOCUS / 07
+                        </span>
+
+                        <div class="subject-hero-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+
+                        <h3>Learn. Build. Grow.</h3>
+
+                        <p>
+                            Technical knowledge becomes more valuable
+                            when you understand it, practise it and use
+                            it to create something real.
+                        </p>
+
+                        <div class="hero-mini-tags">
+                            <span>PROGRAMMING</span>
+                            <span>WEB</span>
+                            <span>DATABASES</span>
+                            <span>IT</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INTRODUCTION -->
+        <section class="subjects-intro">
+            <div class="container">
+                <div class="subjects-intro-grid">
+
+                    <div class="subjects-intro-label">
+                        / LEARNING AREAS
+                    </div>
+
+                    <div>
+                        <h2>
+                            From your first line of code
+                            to your first
+                            <span>complete project.</span>
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SUBJECTS -->
+        <section class="detailed-subjects" id="subjects-list">
+            <div class="container">
+                <div class="detailed-subject-grid">
+
+                    <!-- 01: PROGRAMMING -->
+                    <article class="detailed-subject-card featured">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">01 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-terminal"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">CORE SKILL</span>
+                        <h3>Programming</h3>
+
+                        <p>
+                            Build a strong programming foundation by
+                            understanding logic, problem solving,
+                            algorithms, variables, functions and
+                            object-oriented programming concepts.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>Programming Logic</span>
+                            <span>Algorithms</span>
+                            <span>OOP</span>
+                            <span>Problem Solving</span>
+                            <span>Clean Code</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about Programming">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- 02: WEB DEVELOPMENT -->
+                    <article class="detailed-subject-card">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">02 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-window"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">DEVELOPMENT</span>
+                        <h3>Web Development</h3>
+
+                        <p>
+                            Learn how modern websites and web applications
+                            are structured, designed, developed and connected
+                            to backend systems.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Bootstrap</span>
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about Web Development">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- 03: DESKTOP APPLICATIONS -->
+                    <article class="detailed-subject-card">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">03 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-pc-display"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">DESKTOP DEVELOPMENT</span>
+                        <h3>Desktop App Development</h3>
+
+                        <p>
+                            Learn to build Windows desktop applications using
+                            C#, Windows Forms and database integration.
+                            Practise object-oriented programming, graphical
+                            user interfaces, event handling and CRUD operations.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>C#</span>
+                            <span>Windows Forms</span>
+                            <span>Visual Studio</span>
+                            <span>Event Handling</span>
+                            <span>SQL</span>
+                            <span>CRUD</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about Desktop App Development">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- 04: DATABASE MANAGEMENT -->
+                    <article class="detailed-subject-card">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">04 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-database"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">DATA</span>
+                        <h3>Database Management</h3>
+
+                        <p>
+                            Understand how data is organised, stored and
+                            retrieved through relational database design,
+                            SQL queries and practical CRUD operations.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>MySQL</span>
+                            <span>SQL</span>
+                            <span>ER Diagrams</span>
+                            <span>Relationships</span>
+                            <span>CRUD</span>
+                            <span>Database Design</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about Database Management">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- 05: SOFTWARE ENGINEERING -->
+                    <article class="detailed-subject-card featured">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">05 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-diagram-3"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">ENGINEERING</span>
+                        <h3>Software Engineering</h3>
+
+                        <p>
+                            Learn how software systems are planned, designed,
+                            developed, tested, documented and maintained
+                            throughout the software development lifecycle.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>SDLC</span>
+                            <span>Requirements</span>
+                            <span>UML</span>
+                            <span>Architecture</span>
+                            <span>Testing</span>
+                            <span>Documentation</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about Software Engineering">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- 06: IT FUNDAMENTALS -->
+                    <article class="detailed-subject-card">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">06 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-pc-display-horizontal"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">FUNDAMENTALS</span>
+                        <h3>IT Fundamentals</h3>
+
+                        <p>
+                            Develop a practical understanding of computer
+                            systems, networking, operating systems,
+                            troubleshooting and everyday digital technologies.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>Computer Basics</span>
+                            <span>Networking</span>
+                            <span>Operating Systems</span>
+                            <span>IP Addressing</span>
+                            <span>Troubleshooting</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about IT Fundamentals">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                    <!-- 07: DATA SCIENCE -->
+                    <article class="detailed-subject-card">
+                        <div class="subject-card-top">
+                            <span class="subject-card-number">07 / 07</span>
+                            <div class="subject-card-icon">
+                                <i class="bi bi-bar-chart-line"></i>
+                            </div>
+                        </div>
+
+                        <span class="subject-card-category">DATA & ANALYTICS</span>
+                        <h3>Data Science Fundamentals</h3>
+
+                        <p>
+                            Get introduced to data analysis, basic statistics,
+                            data preparation, visualisation and data-driven
+                            problem solving.
+                        </p>
+
+                        <div class="subject-topics">
+                            <span>Data Analysis</span>
+                            <span>Statistics</span>
+                            <span>Visualisation</span>
+                            <span>Data Preparation</span>
+                            <span>Analytics</span>
+                        </div>
+
+                        <a href="contact.html" class="subject-card-footer"
+                            aria-label="Enquire about Data Science Fundamentals">
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- LEARNING PATH -->
+        <section class="learning-path-section">
+            <div class="container">
+
+                <div class="learning-path-header">
+                    <div class="section-kicker">
+                        <span>/ LEARNING PATH</span>
+                        FROM KNOWLEDGE TO SKILL
+                    </div>
+
+                    <h2>
+                        Don't just learn a topic.
+                        <span>Use it.</span>
+                    </h2>
+
+                    <p>
+                        Each subject can be approached through a progression
+                        that moves from understanding concepts to applying
+                        them in practical situations.
+                    </p>
+                </div>
+
+                <div class="learning-path-grid">
+
+                    <div class="path-item">
+                        <span class="path-item-number">01</span>
+                        <div class="path-item-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h3>Understand</h3>
+                        <p>Learn the concept and understand why it matters.</p>
+                    </div>
+
+                    <div class="path-item">
+                        <span class="path-item-number">02</span>
+                        <div class="path-item-icon">
+                            <i class="bi bi-pencil-square"></i>
+                        </div>
+                        <h3>Practise</h3>
+                        <p>Reinforce knowledge through examples and exercises.</p>
+                    </div>
+
+                    <div class="path-item">
+                        <span class="path-item-number">03</span>
+                        <div class="path-item-icon">
+                            <i class="bi bi-code-square"></i>
+                        </div>
+                        <h3>Build</h3>
+                        <p>Apply your knowledge to practical projects.</p>
+                    </div>
+
+                    <div class="path-item">
+                        <span class="path-item-number">04</span>
+                        <div class="path-item-icon">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h3>Improve</h3>
+                        <p>Review your work, solve problems and grow your skills.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="subjects-page-cta">
+            <div class="container">
+                <div class="subjects-cta-box">
+
+                    <div class="section-kicker">
+                        <span>/ START HERE</span>
+                        YOUR LEARNING JOURNEY
+                    </div>
+
+                    <h2>
+                        Not sure where
+                        <span>to begin?</span>
+                    </h2>
+
+                    <p>
+                        Tell me what you're currently learning, what you're
+                        struggling with or what you want to build. We can
+                        identify a suitable starting point together.
+                    </p>
+
+                    <a href="contact.html" class="btn-primary-custom">
+                        Discuss Your Learning Goals
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <div class="footer-main">
+
+                <!-- Footer Brand -->
+                <div class="footer-brand">
+                    <a href="../index.html" class="brand"
+                        aria-label="NovaTech Learning home">
+                        <img src="../assets/images/novatech-logo.png"
+                            alt="NovaTech Learning logo"
+                            class="brand-logo"
+                            loading="lazy">
+
+                        <span class="brand-content">
+                            <strong>NOVATECH</strong>
+                            <small>LEARNING</small>
+                        </span>
+                    </a>
+
+                    <p>
+                        Practical technology learning for students,
+                        beginners and aspiring developers.
+                    </p>
+
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/kavindhya-gothmini-thilakarathna"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+
+                        <a href="https://github.com/kavindhya-gothmini"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub">
+                            <i class="bi bi-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Explore -->
+                <div class="footer-column">
+                    <span>EXPLORE</span>
+                    <a href="../index.html">Home</a>
+                    <a href="subjects.html">Subjects</a>
+                    <a href="learning.html">Learning Method</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="about.html">About</a>
+                </div>
+
+                <!-- Learning -->
+                <div class="footer-column">
+                    <span>LEARNING</span>
+                    <a href="subjects.html#subjects-list">Programming</a>
+                    <a href="subjects.html#subjects-list">Web Development</a>
+                    <a href="subjects.html#subjects-list">Desktop Applications</a>
+                    <a href="subjects.html#subjects-list">Databases</a>
+                    <a href="subjects.html#subjects-list">Data Science</a>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-column footer-contact">
+                    <span>GET IN TOUCH</span>
+
+                    <a href="contact.html">
+                        Contact Me
+                        <i class="bi bi-arrow-up-right"></i>
+                    </a>
+
+                    <a href="mailto:kavindhyagothmini13650@gmail.com">
+                        kavindhyagothmini13650@gmail.com
+                    </a>
+
+                    <p>Sri Lanka</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <span>
+                    &copy; 2026 NovaTech Learning. All rights reserved.
+                </span>
+
+                <span>
+                    Learn. Build. Grow.
+                </span>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop"
+        type="button" aria-label="Back to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Site JavaScript -->
+    <script src="../assets/js/script.js"></script>
+
+</body>
+</html>

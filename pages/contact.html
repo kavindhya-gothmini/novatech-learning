@@ -1,0 +1,1498 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | NovaTech Learning</title>
+
+    <meta name="description"
+        content="Contact NovaTech Learning for programming, web development, desktop applications, databases, software engineering, IT and data science tutoring.">
+
+    <meta name="theme-color" content="#0b192b">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+
+    <style>
+        :root {
+            --contact-navy: #0b192b;
+            --contact-navy-light: #122942;
+            --contact-teal: #19c6b0;
+            --contact-blue: #4c8dff;
+            --contact-white: #ffffff;
+            --contact-text: #d4dfeb;
+            --contact-muted: #8fa4b9;
+            --contact-border: rgba(160, 190, 215, 0.15);
+            --contact-card: rgba(20, 43, 66, 0.78);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.inner-page {
+            background:
+                radial-gradient(ellipse at 8% 8%,
+                    rgba(25, 198, 176, 0.08), transparent 32%),
+                radial-gradient(ellipse at 95% 30%,
+                    rgba(76, 141, 255, 0.08), transparent 30%),
+                var(--contact-navy);
+            color: var(--contact-text);
+            font-family: "DM Sans", sans-serif;
+            overflow-x: clip;
+        }
+
+        .inner-container {
+            width: min(1180px, calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        /* NAVIGATION */
+
+        .inner-navbar {
+            position: relative;
+            z-index: 100;
+            width: 100%;
+            padding: 17px 0;
+            border-bottom: 1px solid var(--contact-border);
+            background: rgba(11, 25, 43, 0.93);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .inner-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            flex-shrink: 0;
+            text-decoration: none;
+        }
+
+        .inner-brand-logo {
+            display: block;
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .inner-brand-text {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            line-height: 1.1;
+        }
+
+        .inner-brand-name {
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            letter-spacing: 1.2px;
+        }
+
+        .inner-brand-subtitle {
+            color: var(--contact-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 9px;
+            letter-spacing: 1.4px;
+        }
+
+        .inner-navbar .navbar-nav {
+            gap: 8px;
+        }
+
+        .inner-navbar .nav-link {
+            position: relative;
+            padding: 10px 13px !important;
+            color: #aebfd0;
+            font-size: 13px;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+
+        .inner-navbar .nav-link::after {
+            position: absolute;
+            right: 13px;
+            bottom: 3px;
+            left: 13px;
+            height: 2px;
+            background: var(--contact-teal);
+            content: "";
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.25s ease;
+        }
+
+        .inner-navbar .nav-link:hover,
+        .inner-navbar .nav-link.active {
+            color: var(--contact-white);
+        }
+
+        .inner-navbar .nav-link:hover::after,
+        .inner-navbar .nav-link.active::after {
+            transform: scaleX(1);
+        }
+
+        .inner-navbar .navbar-toggler {
+            border: 1px solid var(--contact-border);
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-shadow: none;
+        }
+
+        .inner-navbar .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(25, 198, 176, 0.18);
+        }
+
+        /* BUTTONS */
+
+        .inner-btn {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 21px;
+            border: 1px solid transparent;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .inner-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .inner-btn-primary {
+            background: var(--contact-teal);
+            color: var(--contact-navy);
+            box-shadow: 0 8px 24px rgba(25, 198, 176, 0.12);
+        }
+
+        .inner-btn-primary:hover {
+            background: #58e2d0;
+            color: var(--contact-navy);
+            box-shadow: 0 12px 30px rgba(25, 198, 176, 0.2);
+        }
+
+        .inner-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .inner-btn-outline {
+            border-color: var(--contact-border);
+            background: rgba(255, 255, 255, 0.025);
+            color: var(--contact-white);
+        }
+
+        .inner-btn-outline:hover {
+            border-color: var(--contact-teal);
+            background: rgba(25, 198, 176, 0.06);
+            color: var(--contact-teal);
+        }
+
+        /* HERO */
+
+        .inner-hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            padding: 100px 0 90px;
+            border-bottom: 1px solid var(--contact-border);
+            background:
+                radial-gradient(circle at 82% 25%,
+                    rgba(25, 198, 176, 0.12), transparent 25%),
+                linear-gradient(135deg,
+                    rgba(18, 41, 66, 0.8),
+                    rgba(11, 25, 43, 0.25));
+        }
+
+        .inner-hero::before {
+            position: absolute;
+            z-index: -1;
+            top: -100px;
+            right: -75px;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(25, 198, 176, 0.15);
+            border-radius: 50%;
+            content: "";
+            box-shadow:
+                0 0 0 45px rgba(25, 198, 176, 0.025),
+                0 0 0 90px rgba(25, 198, 176, 0.018);
+        }
+
+        .inner-hero-content {
+            max-width: 790px;
+        }
+
+        .inner-kicker,
+        .inner-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--contact-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .inner-kicker {
+            margin-bottom: 24px;
+        }
+
+        .inner-kicker::before,
+        .inner-label::before {
+            width: 24px;
+            height: 2px;
+            background: var(--contact-teal);
+            content: "";
+        }
+
+        .inner-title {
+            margin: 0 0 24px;
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -2.7px;
+        }
+
+        .inner-title span,
+        .inner-heading h2 span {
+            color: var(--contact-teal);
+        }
+
+        .inner-description {
+            max-width: 650px;
+            margin: 0;
+            color: #a8bbce;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        /* SECTION SPACING */
+
+        .inner-section {
+            padding: 90px 0;
+        }
+
+        .inner-section-sm {
+            padding: 25px 0 100px;
+        }
+
+        /* SECTION HEADINGS */
+
+        .inner-heading {
+            max-width: 760px;
+            margin-bottom: 35px;
+        }
+
+        .inner-heading .inner-label {
+            margin-bottom: 18px;
+        }
+
+        .inner-heading h2 {
+            margin: 0 0 18px;
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(30px, 4vw, 43px);
+            font-weight: 800;
+            line-height: 1.22;
+            letter-spacing: -1.3px;
+        }
+
+        .inner-heading p {
+            margin: 0;
+            color: var(--contact-muted);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        /* CONTACT PANELS */
+
+        .contact-box {
+            height: 100%;
+            padding: clamp(24px, 3.5vw, 36px);
+            border: 1px solid var(--contact-border);
+            border-radius: 20px;
+            background:
+                linear-gradient(145deg,
+                    rgba(23, 49, 73, 0.9),
+                    rgba(14, 31, 50, 0.88));
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-box > .inner-label {
+            margin-bottom: 18px;
+        }
+
+        .contact-box > h3 {
+            margin-top: 0;
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: clamp(24px, 3vw, 31px);
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.7px;
+        }
+
+        .contact-box > p {
+            color: var(--contact-muted);
+            font-size: 14px;
+            line-height: 1.85;
+        }
+
+        /* CONTACT INFORMATION */
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            padding: 21px 0;
+            border-bottom: 1px solid var(--contact-border);
+        }
+
+        .contact-item:first-child {
+            padding-top: 0;
+        }
+
+        .contact-item:last-child {
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(25, 198, 176, 0.2);
+            border-radius: 13px;
+            background: rgba(25, 198, 176, 0.08);
+            color: var(--contact-teal);
+            font-size: 20px;
+        }
+
+        .contact-item h4 {
+            margin: 1px 0 7px;
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+        }
+
+        .contact-item a,
+        .contact-item p {
+            margin: 0;
+            color: var(--contact-muted);
+            font-size: 13px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--contact-teal);
+        }
+
+        /* CONTACT FORM */
+
+        #tutorContactForm .form-label {
+            display: block;
+            margin-bottom: 9px;
+            color: #dfe8f1;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        #tutorContactForm .form-control,
+        #tutorContactForm .form-select {
+            min-height: 49px;
+            padding: 12px 14px;
+            border: 1px solid rgba(160, 190, 215, 0.19);
+            border-radius: 10px;
+            background-color: rgba(7, 20, 34, 0.7);
+            color: var(--contact-white);
+            font-family: "DM Sans", sans-serif;
+            font-size: 13px;
+            box-shadow: none;
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+        }
+
+        #tutorContactForm .form-control::placeholder {
+            color: #71869b;
+            opacity: 1;
+        }
+
+        #tutorContactForm .form-control:focus,
+        #tutorContactForm .form-select:focus {
+            border-color: var(--contact-teal);
+            background-color: rgba(7, 20, 34, 0.95);
+            color: var(--contact-white);
+            box-shadow: 0 0 0 3px rgba(25, 198, 176, 0.12);
+        }
+
+        #tutorContactForm .form-select {
+            color-scheme: dark;
+        }
+
+        #tutorContactForm .form-select option {
+            background: var(--contact-navy-light);
+            color: var(--contact-white);
+        }
+
+        #tutorContactForm textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+
+        #tutorContactForm .inner-btn {
+            min-width: 165px;
+        }
+
+        #contactFormStatus {
+            margin-top: 15px;
+            padding: 12px 14px;
+            border: 1px solid var(--contact-border);
+            border-radius: 10px;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        #contactFormStatus.status-success {
+            border-color: rgba(25, 198, 176, 0.3);
+            background: rgba(25, 198, 176, 0.07);
+            color: #7cebdc;
+        }
+
+        #contactFormStatus.status-error {
+            border-color: rgba(255, 125, 125, 0.3);
+            background: rgba(255, 100, 100, 0.07);
+            color: #ffaaaa;
+        }
+
+        #contactFormStatus.status-pending {
+            color: var(--contact-text);
+        }
+
+        /* Hidden anti-spam field */
+        .contact-honeypot {
+            position: absolute !important;
+            left: -10000px !important;
+            width: 1px !important;
+            height: 1px !important;
+            overflow: hidden !important;
+        }
+
+        /* WHAT TO EXPECT CARDS */
+
+        .inner-heading.text-center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .inner-heading.text-center .inner-label {
+            justify-content: center;
+        }
+
+        .inner-card {
+            position: relative;
+            height: 100%;
+            padding: 30px;
+            overflow: hidden;
+            border: 1px solid var(--contact-border);
+            border-radius: 17px;
+            background: var(--contact-card);
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .inner-card::after {
+            position: absolute;
+            top: 0;
+            left: 28px;
+            width: 45px;
+            height: 2px;
+            background: var(--contact-teal);
+            content: "";
+            transition: width 0.3s ease;
+        }
+
+        .inner-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(25, 198, 176, 0.42);
+            background: rgba(24, 53, 77, 0.96);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.14);
+        }
+
+        .inner-card:hover::after {
+            width: 80px;
+        }
+
+        .inner-number {
+            color: var(--contact-teal);
+            font-family: "Space Mono", monospace;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .inner-card-icon {
+            width: 55px;
+            height: 55px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 23px;
+            border: 1px solid rgba(25, 198, 176, 0.2);
+            border-radius: 14px;
+            background: rgba(25, 198, 176, 0.08);
+            color: var(--contact-teal);
+            font-size: 23px;
+        }
+
+        .inner-card h3 {
+            margin: 0 0 13px;
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .inner-card p {
+            margin: 0;
+            color: var(--contact-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        /* FOOTER */
+
+        .inner-footer {
+            padding: 70px 0 25px;
+            border-top: 1px solid var(--contact-border);
+            background: #081522;
+        }
+
+        .inner-footer-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .inner-footer-brand .inner-brand-logo {
+            width: 46px;
+            height: 46px;
+        }
+
+        .inner-footer .col-lg-6 > p {
+            max-width: 440px;
+            color: var(--contact-muted);
+            font-size: 14px;
+            line-height: 1.9;
+        }
+
+        .inner-footer h5 {
+            margin-bottom: 22px;
+            color: var(--contact-white);
+            font-family: "Manrope", sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        .inner-footer-links {
+            display: grid;
+            gap: 12px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .inner-footer-links a {
+            color: var(--contact-muted);
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .inner-footer-links a:hover {
+            padding-left: 4px;
+            color: var(--contact-teal);
+        }
+
+        .inner-footer-bottom {
+            margin-top: 55px;
+            padding-top: 23px;
+            border-top: 1px solid var(--contact-border);
+            color: #71869b;
+            font-size: 12px;
+            line-height: 1.8;
+            text-align: center;
+        }
+
+        /* RESPONSIVE */
+
+        @media (min-width: 992px) {
+            .inner-navbar .navbar-collapse {
+                flex-grow: 1;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .inner-navbar .navbar-collapse {
+                margin-top: 17px;
+                padding: 14px 0 5px;
+                border-top: 1px solid var(--contact-border);
+            }
+
+            .inner-navbar .navbar-nav {
+                align-items: stretch !important;
+                gap: 4px;
+            }
+
+            .inner-navbar .nav-link {
+                padding: 11px 5px !important;
+            }
+
+            .inner-navbar .nav-link::after {
+                right: auto;
+                bottom: 5px;
+                left: 5px;
+                width: 26px;
+            }
+
+            .inner-navbar .nav-item.ms-lg-3 {
+                margin: 10px 0 0 !important;
+            }
+
+            .inner-hero {
+                padding: 75px 0 70px;
+            }
+
+            .inner-section {
+                padding: 70px 0;
+            }
+
+            .contact-box {
+                padding: 27px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .inner-container {
+                width: min(100% - 36px, 600px);
+            }
+
+            .inner-hero {
+                padding: 65px 0 60px;
+            }
+
+            .inner-title {
+                font-size: clamp(39px, 9vw, 58px);
+                letter-spacing: -1.8px;
+            }
+
+            .inner-description {
+                font-size: 15px;
+            }
+
+            .inner-section {
+                padding: 60px 0;
+            }
+
+            .inner-section-sm {
+                padding: 10px 0 75px;
+            }
+
+            .inner-heading {
+                margin-bottom: 28px;
+            }
+
+            .contact-box {
+                padding: 24px;
+                border-radius: 17px;
+            }
+
+            .inner-card {
+                padding: 27px;
+            }
+
+            .inner-footer {
+                padding-top: 55px;
+            }
+
+            .inner-footer-bottom {
+                margin-top: 38px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .inner-container {
+                width: calc(100% - 30px);
+            }
+
+            .inner-navbar {
+                padding: 13px 0;
+            }
+
+            .inner-brand {
+                gap: 9px;
+            }
+
+            .inner-brand-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .inner-brand-name {
+                font-size: 13px;
+            }
+
+            .inner-brand-subtitle {
+                font-size: 8px;
+                letter-spacing: 1px;
+            }
+
+            .inner-hero {
+                padding: 55px 0;
+            }
+
+            .inner-kicker,
+            .inner-label {
+                font-size: 10px;
+                letter-spacing: 1.1px;
+            }
+
+            .inner-title {
+                font-size: clamp(35px, 10vw, 48px);
+                letter-spacing: -1.5px;
+            }
+
+            .inner-description {
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+            .inner-heading h2 {
+                font-size: 30px;
+                letter-spacing: -0.8px;
+            }
+
+            .contact-box {
+                padding: 20px;
+            }
+
+            .contact-item {
+                gap: 13px;
+            }
+
+            .contact-item-icon {
+                width: 43px;
+                height: 43px;
+                font-size: 18px;
+            }
+
+            .contact-item a {
+                font-size: 12px;
+            }
+
+            #tutorContactForm .form-control,
+            #tutorContactForm .form-select {
+                font-size: 14px;
+            }
+
+            #tutorContactForm .inner-btn {
+                width: 100%;
+            }
+
+            .inner-footer-brand {
+                gap: 9px;
+            }
+
+            .inner-footer-brand .inner-brand-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .inner-footer-brand .inner-brand-name {
+                font-size: 13px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="inner-page">
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar navbar-expand-lg inner-navbar">
+        <div class="container inner-container">
+
+            <a href="../index.html"
+                class="inner-brand"
+                aria-label="NovaTech Learning Home">
+
+                <img
+                    src="../assets/images/novatech-logo.png"
+                    alt="NovaTech Learning logo"
+                    class="inner-brand-logo">
+
+                <span class="inner-brand-text">
+                    <span class="inner-brand-name">NOVATECH</span>
+                    <span class="inner-brand-subtitle">LEARNING</span>
+                </span>
+            </a>
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <i class="bi bi-list text-white fs-2"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavigation">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="subjects.html">Subjects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="learning.html">Learning</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="experience-education.html">
+                            Experience &amp; Education
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="contact.html"
+                            class="inner-btn inner-btn-primary"
+                            aria-current="page">
+                            Contact
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="inner-hero">
+            <div class="inner-container">
+
+                <div class="inner-hero-content">
+
+                    <div class="inner-kicker">05 / Contact</div>
+
+                    <h1 class="inner-title">
+                        Let's talk<br>
+                        <span>technology.</span>
+                    </h1>
+
+                    <p class="inner-description">
+                        Have a question about a subject, project or learning
+                        path? Send a message and let's discuss it.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+
+        <section class="inner-section">
+            <div class="inner-container">
+
+                <div class="row g-5 align-items-start">
+
+                    <!-- CONTACT DETAILS -->
+
+                    <div class="col-lg-5">
+
+                        <div class="inner-heading">
+
+                            <div class="inner-label">Get In Touch</div>
+
+                            <h2>
+                                Start with a
+                                <span>conversation.</span>
+                            </h2>
+
+                            <p>
+                                Whether you are looking for help with a
+                                technical subject or want to discuss a
+                                project, feel free to reach out.
+                            </p>
+
+                        </div>
+
+                        <div class="contact-box">
+
+                            <div class="contact-item">
+
+                                <div class="contact-item-icon">
+                                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:kavindhyagothmini13650@gmail.com">
+                                        kavindhyagothmini13650@gmail.com
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="contact-item">
+
+                                <div class="contact-item-icon">
+                                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <h4>LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/kavindhya-gothmini-thilakarathna"
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                        Connect on LinkedIn
+                                        <i class="bi bi-arrow-up-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="contact-item">
+
+                                <div class="contact-item-icon">
+                                    <i class="bi bi-github" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <h4>GitHub</h4>
+                                    <a href="https://github.com/kavindhya-gothmini"
+                                        target="_blank"
+                                        rel="noopener noreferrer">
+                                        View GitHub Profile
+                                        <i class="bi bi-arrow-up-right"></i>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <div class="contact-item">
+
+                                <div class="contact-item-icon">
+                                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                                </div>
+
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Sri Lanka</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- CONTACT FORM -->
+
+                    <div class="col-lg-7">
+
+                        <div class="contact-box">
+
+                            <div class="inner-label">Learning Enquiry</div>
+
+                            <h3>Tell me what you want to learn.</h3>
+
+                            <p class="mb-4">
+                                Share a few details about the subject,
+                                project or technical problem you would
+                                like to discuss.
+                            </p>
+
+                            <form id="tutorContactForm"
+                               action="../send-email.php"
+                               method="POST">
+
+                                <!-- Honeypot anti-spam field: leave empty -->
+                                <div class="contact-honeypot"
+                                    aria-hidden="true">
+                                    <label for="website">Leave this field empty</label>
+                                    <input type="text"
+                                        id="website"
+                                        name="website"
+                                        tabindex="-1"
+                                        autocomplete="off">
+                                </div>
+
+                                <div class="row g-4">
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label" for="name">
+                                            Your Name
+                                        </label>
+
+                                        <input type="text"
+                                            class="form-control"
+                                            id="name"
+                                            name="name"
+                                            autocomplete="name"
+                                            placeholder="Enter your name"
+                                            maxlength="100"
+                                            required>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label" for="email">
+                                            Email Address
+                                        </label>
+
+                                        <input type="email"
+                                            class="form-control"
+                                            id="email"
+                                            name="email"
+                                            autocomplete="email"
+                                            placeholder="you@example.com"
+                                            maxlength="254"
+                                            required>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <label class="form-label" for="subject">
+                                            What would you like help with?
+                                        </label>
+
+                                        <select class="form-select"
+                                            id="subject"
+                                            name="subject"
+                                            required>
+
+                                            <option value="" selected disabled>
+                                                Select a subject
+                                            </option>
+
+                                            <option value="Programming">Programming</option>
+                                            <option value="Web Development">Web Development</option>
+                                            <option value="Desktop Application Development">
+                                                Desktop Application Development
+                                            </option>
+                                            <option value="Database Management">Database Management</option>
+                                            <option value="Software Engineering">Software Engineering</option>
+                                            <option value="IT Fundamentals">IT Fundamentals</option>
+                                            <option value="Data Science Fundamentals">
+                                                Data Science Fundamentals
+                                            </option>
+                                            <option value="Project Guidance">Project Guidance</option>
+                                            <option value="Assignment Guidance">Assignment Guidance</option>
+                                            <option value="Exam Preparation">Exam Preparation</option>
+                                            <option value="Other">Other</option>
+
+                                        </select>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <label class="form-label" for="message">
+                                            Message
+                                        </label>
+
+                                        <textarea class="form-control"
+                                            id="message"
+                                            name="message"
+                                            rows="5"
+                                            minlength="5"
+                                            maxlength="5000"
+                                            placeholder="Tell me about your learning goal or project..."
+                                            required></textarea>
+
+                                    </div>
+
+                                    <div class="col-12">
+
+                                        <button type="submit"
+                                            class="inner-btn inner-btn-primary">
+
+                                            <span class="button-text">Send Enquiry</span>
+                                            <i class="bi bi-arrow-right" aria-hidden="true"></i>
+
+                                        </button>
+
+                                        <p id="contactFormStatus"
+                                            class="mt-3"
+                                            role="status"
+                                            aria-live="polite"
+                                            hidden></p>
+
+                                        <p class="mt-3 mb-0"
+                                            style="color: var(--contact-muted); font-size: 12px; line-height: 1.7;">
+                                            Your enquiry will be sent securely through the website's
+                                            email service. Your email application does not need to open.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT TO EXPECT -->
+
+        <section class="inner-section-sm">
+            <div class="inner-container">
+
+                <div class="inner-heading text-center">
+
+                    <div class="inner-label">Before We Start</div>
+
+                    <h2>
+                        A simple approach to
+                        <span>getting started.</span>
+                    </h2>
+
+                    <p>
+                        Every learning journey starts with understanding
+                        your goals and finding a practical way forward.
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="inner-card">
+
+                            <div class="inner-number">01 / DISCUSS</div>
+
+                            <div class="inner-card-icon mt-3">
+                                <i class="bi bi-chat-dots" aria-hidden="true"></i>
+                            </div>
+
+                            <h3>Discuss</h3>
+
+                            <p>
+                                Tell me about your current level, subject
+                                and what you want to achieve.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="inner-card">
+
+                            <div class="inner-number">02 / PLAN</div>
+
+                            <div class="inner-card-icon mt-3">
+                                <i class="bi bi-signpost-split" aria-hidden="true"></i>
+                            </div>
+
+                            <h3>Plan</h3>
+
+                            <p>
+                                Identify the concepts, skills and practical
+                                areas that should be focused on.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="inner-card">
+
+                            <div class="inner-number">03 / LEARN</div>
+
+                            <div class="inner-card-icon mt-3">
+                                <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+                            </div>
+
+                            <h3>Learn</h3>
+
+                            <p>
+                                Work through concepts, practise them and
+                                gradually apply them to practical tasks.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="inner-footer">
+        <div class="inner-container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-6">
+
+                    <a href="../index.html"
+                        class="inner-brand inner-footer-brand"
+                        aria-label="NovaTech Learning Home">
+
+                        <img
+                            src="../assets/images/novatech-logo.png"
+                            alt="NovaTech Learning logo"
+                            class="inner-brand-logo"
+                            loading="lazy">
+
+                        <span class="inner-brand-text">
+                            <span class="inner-brand-name">NOVATECH</span>
+                            <span class="inner-brand-subtitle">LEARNING</span>
+                        </span>
+
+                    </a>
+
+                    <p class="mt-3">
+                        Learn. Build. Grow. Practical technology learning
+                        for students who want to understand concepts,
+                        build projects and grow their technical confidence.
+                    </p>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <h5>Explore</h5>
+
+                    <ul class="inner-footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="subjects.html">Subjects</a></li>
+                        <li><a href="learning.html">Learning</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+
+                </div>
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <h5>Connect</h5>
+
+                    <ul class="inner-footer-links">
+                        <li><a href="about.html">About Tutor</a></li>
+                        <li><a href="contact.html" aria-current="page">Contact</a></li>
+
+                        <li>
+                            <a href="https://www.linkedin.com/in/kavindhya-gothmini-thilakarathna"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                LinkedIn
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://github.com/kavindhya-gothmini"
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <div class="inner-footer-bottom">
+                © 2026 NovaTech Learning. Learn. Build. Grow. All rights reserved.
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+<!-- Contact form AJAX submission -->
+<script>
+(() => {
+    'use strict';
+
+    const form = document.getElementById('tutorContactForm');
+    const status = document.getElementById('contactFormStatus');
+
+    if (!form || !status) {
+        console.error('Contact form or status element was not found.');
+        return;
+    }
+
+    const submitButton = form.querySelector('button[type="submit"]');
+    const buttonText = submitButton.querySelector('.button-text');
+    const buttonIcon = submitButton.querySelector('i');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        if (!form.reportValidity()) {
+            return;
+        }
+
+        submitButton.disabled = true;
+        buttonText.textContent = 'Sending...';
+        buttonIcon.className = 'spinner-border spinner-border-sm';
+        buttonIcon.setAttribute('aria-hidden', 'true');
+
+        status.hidden = false;
+        status.className = 'mt-3 status-pending';
+        status.textContent = 'Sending your enquiry. Please wait.';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            // Read the response as text first, so PHP errors are visible.
+            const responseText = await response.text();
+
+            console.log('Contact form HTTP status:', response.status);
+            console.log('Contact form PHP response:', responseText);
+
+            let result;
+
+            try {
+                result = JSON.parse(responseText);
+            } catch (parseError) {
+                console.error('PHP did not return valid JSON:', parseError);
+
+                throw new Error(
+                    'PHP returned an invalid response. Open F12 > Console ' +
+                    'to inspect the PHP response. Check the XAMPP error log.'
+                );
+            }
+
+            if (!response.ok || result.success !== true) {
+                throw new Error(
+                    result.message ||
+                    'Your enquiry could not be sent. Please try again.'
+                );
+            }
+
+            status.className = 'mt-3 status-success';
+            status.textContent =
+                result.message ||
+                'Your enquiry was sent successfully. Thank you!';
+
+            form.reset();
+
+        } catch (error) {
+            console.error('Contact form submission failed:', error);
+
+            status.className = 'mt-3 status-error';
+            status.textContent = error.message ||
+                'Unable to send your enquiry. Please try again later.';
+
+        } finally {
+            submitButton.disabled = false;
+            buttonText.textContent = 'Send Enquiry';
+            buttonIcon.className = 'bi bi-arrow-right';
+            buttonIcon.setAttribute('aria-hidden', 'true');
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
