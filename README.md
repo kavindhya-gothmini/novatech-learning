@@ -73,14 +73,14 @@ novatech-learning/
 └── README.md
 ```
 
-*Note: This is an example structure. Adjust the filenames and folders to match the actual files in your project.*
+
 
 ## 🚀 Run the Project Locally
 
 1. Clone the repository:
 
    ```bash
-   git clone YOUR_GITHUB_REPOSITORY_URL
+[   git clone YOUR_GITHUB_REPOSITORY_URL](https://github.com/kavindhya-gothmini/novatech-learning)
    ```
 
 2. Open the project folder:
