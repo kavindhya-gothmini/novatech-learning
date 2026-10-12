@@ -78,16 +78,13 @@ novatech-learning/
 ## 🚀 Run the Project Locally
 
 1. Clone the repository:
-
-   ```bash
 (https://github.com/kavindhya-gothmini/novatech-learning)
-   ```
+
 
 2. Open the project folder:
 
-   ```bash
    cd novatech-learning
-   ```
+
 
 3. Open `index.html` in your browser, or use the **Live Server** extension in Visual Studio Code.
 
