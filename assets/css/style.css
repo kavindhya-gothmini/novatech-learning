@@ -1,10 +1,12 @@
 
 /* =========================================================
-   NOVATECH LEARNING — MAIN STYLESHEET
+   NOVATECH LEARNING — COMPLETE RESPONSIVE STYLESHEET
    Brand: Learn. Build. Grow.
-   ========================================================= */
+   File: assets/css/style.css
+========================================================= */
 
 /* ---------- 1. DESIGN SYSTEM ---------- */
+
 :root {
     --navy: #10243a;
     --navy-dark: #091727;
@@ -17,8 +19,8 @@
     --muted: #718399;
     --surface: #142b42;
     --surface-light: #19334d;
-    --border: rgba(190, 215, 240, 0.13);
-    --white: #ffffff;
+    --border: rgba(190, 215, 240, .13);
+    --white: #fff;
     --page-bg: #0b1929;
     --font-main: "DM Sans", sans-serif;
     --font-heading: "Manrope", sans-serif;
@@ -28,11 +30,12 @@
     --radius-sm: 10px;
     --radius-md: 18px;
     --radius-lg: 28px;
-    --shadow-card: 0 20px 55px rgba(0, 0, 0, 0.18);
-    --transition: 0.25s ease;
+    --shadow-card: 0 20px 55px rgba(0, 0, 0, .18);
+    --transition: .25s ease;
 }
 
-/* ---------- 2. RESET ---------- */
+/* ---------- 2. RESET AND GLOBAL ---------- */
+
 *,
 *::before,
 *::after {
@@ -40,20 +43,24 @@
 }
 
 html {
+    width: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
+    overflow-x: clip;
 }
 
 body {
     position: relative;
-    margin: 0;
+    width: 100%;
     min-width: 320px;
+    max-width: 100%;
+    margin: 0;
+    overflow-x: clip;
     background: var(--page-bg);
     color: var(--text);
     font-family: var(--font-main);
     font-size: 15px;
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 body,
@@ -64,9 +71,16 @@ select {
     font-family: var(--font-main);
 }
 
+img,
+svg,
+video,
+canvas,
+iframe {
+    max-width: 100%;
+}
+
 img {
     display: block;
-    max-width: 100%;
 }
 
 a {
@@ -94,6 +108,26 @@ h6 {
     font-family: var(--font-heading);
     font-weight: 800;
     line-height: 1.2;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+p,
+li {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+a {
+    overflow-wrap: anywhere;
+    word-break: normal;
+}
+
+button,
+input,
+textarea,
+select {
+    max-width: 100%;
 }
 
 ::selection {
@@ -108,6 +142,16 @@ h6 {
     padding-inline: 0;
 }
 
+section,
+header,
+footer,
+main,
+nav,
+.row,
+[class*="col-"] {
+    min-width: 0;
+}
+
 section {
     position: relative;
     z-index: 1;
@@ -117,11 +161,13 @@ section {
     padding-block: 110px;
 }
 
-/* ---------- 3. BACKGROUND SYSTEM ---------- */
+/* ---------- 3. BACKGROUND EFFECTS ---------- */
+
 .background-system {
     position: absolute;
     inset: 0 0 auto;
     height: 1500px;
+    max-width: 100%;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
@@ -133,7 +179,7 @@ section {
     height: 420px;
     border-radius: 50%;
     filter: blur(100px);
-    opacity: 0.12;
+    opacity: .12;
 }
 
 .orb-one {
@@ -152,15 +198,15 @@ section {
     top: 950px;
     left: 35%;
     background: #3864d8;
-    opacity: 0.07;
+    opacity: .07;
 }
 
 .grid-background {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(180, 210, 240, 0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(180, 210, 240, 0.025) 1px, transparent 1px);
+        linear-gradient(rgba(180, 210, 240, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(180, 210, 240, .025) 1px, transparent 1px);
     background-size: 52px 52px;
     mask-image: linear-gradient(to bottom, black, transparent 90%);
 }
@@ -172,13 +218,14 @@ section {
     width: 220px;
     height: 220px;
     border-radius: 50%;
-    background: rgba(25, 198, 176, 0.055);
+    background: rgba(25, 198, 176, .055);
     filter: blur(55px);
     pointer-events: none;
     z-index: 0;
 }
 
 /* ---------- 4. PAGE LOADER ---------- */
+
 .page-loader {
     position: fixed;
     inset: 0;
@@ -187,7 +234,7 @@ section {
     justify-content: center;
     background: var(--navy-dark);
     z-index: 9999;
-    transition: opacity 0.45s ease, visibility 0.45s ease;
+    transition: opacity .45s ease, visibility .45s ease;
 }
 
 .page-loader.loaded,
@@ -209,9 +256,9 @@ section {
     height: 76px;
     margin: 0 auto 25px;
     padding: 10px;
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 20px;
-    background: var(--surface);
 }
 
 .loader-logo img {
@@ -224,7 +271,7 @@ section {
     height: 3px;
     margin-bottom: 18px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, .1);
     border-radius: 10px;
 }
 
@@ -244,23 +291,17 @@ section {
 }
 
 @keyframes loaderProgress {
-    0% { transform: translateX(-110%); }
-    100% { transform: translateX(260%); }
+    from { transform: translateX(-110%); }
+    to { transform: translateX(260%); }
 }
 
 /* ---------- 5. NAVIGATION ---------- */
-/*
-   The header stays in normal document flow.
-   This avoids the hero being covered by a fixed navbar.
-*/
+
 .site-header {
     position: relative;
-    top: auto;
-    right: auto;
-    left: auto;
-    z-index: 100;
+    z-index: 1000;
     width: 100%;
-    background: rgba(9, 23, 39, 0.94);
+    background: rgba(9, 23, 39, .94);
     border-bottom: 1px solid var(--border);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
@@ -289,15 +330,16 @@ section {
 }
 
 .brand-logo {
+    flex: 0 0 46px;
     width: 46px;
     height: 46px;
-    flex: 0 0 46px;
     object-fit: contain;
 }
 
 .brand-content {
     display: flex;
     flex-direction: column;
+    min-width: 0;
     line-height: 1.15;
 }
 
@@ -307,6 +349,7 @@ section {
     font-size: 17px;
     font-weight: 800;
     letter-spacing: 1.4px;
+    white-space: nowrap;
 }
 
 .brand-content small {
@@ -395,6 +438,7 @@ section {
     border-radius: 9px;
     background: var(--surface);
     box-shadow: none !important;
+    cursor: pointer;
 }
 
 .custom-toggler span {
@@ -407,6 +451,7 @@ section {
 }
 
 /* ---------- 6. HERO SECTION ---------- */
+
 .hero-section {
     position: relative;
     z-index: 1;
@@ -416,9 +461,9 @@ section {
 
 .hero-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.02fr) minmax(0, 0.98fr);
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
     align-items: center;
-    gap: clamp(40px, 6vw, 82px);
+    gap: clamp(30px, 5vw, 70px);
     width: 100%;
 }
 
@@ -447,29 +492,31 @@ section {
 .status-indicator,
 .profile-status span,
 .label-dot {
+    flex: 0 0 7px;
     width: 7px;
     height: 7px;
-    flex: 0 0 7px;
     background: var(--teal);
     border-radius: 50%;
-    box-shadow: 0 0 12px rgba(25, 198, 176, 0.55);
+    box-shadow: 0 0 12px rgba(25, 198, 176, .55);
 }
 
 .status-line {
+    flex: 0 0 35px;
     width: 35px;
     height: 1px;
     background: var(--teal);
-    opacity: 0.6;
+    opacity: .6;
 }
 
 .hero-title {
     max-width: 660px;
     margin-bottom: 26px;
     color: var(--white);
-    font-size: clamp(48px, 5.5vw, 76px);
+    font-size: clamp(43px, 5.1vw, 76px);
     font-weight: 800;
-    letter-spacing: -3.8px;
+    letter-spacing: -3px;
     line-height: 1.07;
+    overflow-wrap: normal;
 }
 
 .hero-title span {
@@ -503,13 +550,14 @@ section {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 12px;
     min-height: 51px;
     padding: 13px 20px;
     border: 1px solid var(--teal);
     border-radius: 7px;
     font-size: 13px;
     font-weight: 800;
+    text-align: center;
     transition: all var(--transition);
 }
 
@@ -522,6 +570,16 @@ section {
     color: var(--navy-dark);
     background: #62e7d6;
     transform: translateY(-3px);
+}
+
+.btn-outline-custom {
+    color: var(--teal);
+    background: transparent;
+}
+
+.btn-outline-custom:hover {
+    color: var(--navy-dark);
+    background: var(--teal);
 }
 
 .btn-text-custom {
@@ -560,6 +618,7 @@ section {
     display: flex;
     align-items: center;
     gap: 11px;
+    min-width: 0;
 }
 
 .trust-block strong {
@@ -575,12 +634,14 @@ section {
 }
 
 .trust-divider {
+    flex: 0 0 1px;
     width: 1px;
     height: 33px;
     background: var(--border);
 }
 
 /* ---------- 7. HERO DASHBOARD ---------- */
+
 .hero-visual {
     position: relative;
     display: flex;
@@ -598,9 +659,9 @@ section {
     min-width: 0;
     padding: 26px;
     background: linear-gradient(145deg, #18344d, #10243a);
-    border: 1px solid rgba(160, 205, 230, 0.18);
+    border: 1px solid rgba(160, 205, 230, .18);
     border-radius: 20px;
-    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .28);
 }
 
 .dashboard-header {
@@ -628,6 +689,7 @@ section {
 
 .dashboard-menu {
     display: grid;
+    flex: 0 0 35px;
     place-items: center;
     width: 35px;
     height: 35px;
@@ -642,15 +704,15 @@ section {
     gap: 12px;
     padding: 15px;
     margin-bottom: 22px;
-    background: rgba(5, 17, 30, 0.35);
+    background: rgba(5, 17, 30, .35);
     border: 1px solid var(--border);
     border-radius: 12px;
 }
 
 .profile-avatar {
     display: grid;
-    place-items: center;
     flex: 0 0 43px;
+    place-items: center;
     width: 43px;
     height: 43px;
     padding: 5px;
@@ -687,6 +749,7 @@ section {
 
 .profile-status {
     display: flex;
+    flex: 0 0 auto;
     align-items: center;
     gap: 6px;
     color: var(--teal);
@@ -694,9 +757,9 @@ section {
 }
 
 .profile-status span {
+    flex: 0 0 6px;
     width: 6px;
     height: 6px;
-    flex-basis: 6px;
 }
 
 .skills-container {
@@ -710,15 +773,15 @@ section {
     gap: 13px;
     min-width: 0;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(190, 215, 240, 0.07);
+    background: rgba(255, 255, 255, .025);
+    border: 1px solid rgba(190, 215, 240, .07);
     border-radius: 11px;
 }
 
 .skill-icon {
     display: grid;
-    place-items: center;
     flex: 0 0 42px;
+    place-items: center;
     width: 42px;
     height: 42px;
     border-radius: 10px;
@@ -727,22 +790,22 @@ section {
 
 .skill-icon.programming {
     color: #79a8ff;
-    background: rgba(76, 141, 255, 0.13);
+    background: rgba(76, 141, 255, .13);
 }
 
 .skill-icon.web {
     color: #4be0cd;
-    background: rgba(25, 198, 176, 0.12);
+    background: rgba(25, 198, 176, .12);
 }
 
 .skill-icon.database {
     color: #f4bd69;
-    background: rgba(244, 189, 105, 0.12);
+    background: rgba(244, 189, 105, .12);
 }
 
 .skill-icon.software {
     color: #c2a5ff;
-    background: rgba(161, 121, 255, 0.13);
+    background: rgba(161, 121, 255, .13);
 }
 
 .skill-information {
@@ -754,14 +817,14 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 8px;
 }
 
 .skill-title strong {
-    overflow-wrap: anywhere;
     color: var(--text);
     font-size: 11px;
+    overflow-wrap: normal;
 }
 
 .skill-title > span {
@@ -774,7 +837,7 @@ section {
 .skill-progress {
     height: 4px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, .09);
     border-radius: 5px;
 }
 
@@ -807,8 +870,8 @@ section {
 
 .focus-icon {
     display: grid;
-    place-items: center;
     flex: 0 0 36px;
+    place-items: center;
     width: 36px;
     height: 36px;
     color: var(--navy-dark);
@@ -816,12 +879,10 @@ section {
     border-radius: 10px;
 }
 
-.visual-label {
+.visual-label,
+.floating-tech {
     position: absolute;
     z-index: 3;
-    display: flex;
-    align-items: center;
-    gap: 9px;
     padding: 10px 13px;
     color: var(--text);
     background: #17334a;
@@ -830,7 +891,13 @@ section {
     box-shadow: var(--shadow-card);
     font-family: var(--font-code);
     font-size: 9px;
-    letter-spacing: 0.6px;
+    letter-spacing: .4px;
+}
+
+.visual-label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
 }
 
 .label-top {
@@ -843,15 +910,9 @@ section {
 }
 
 .floating-tech {
-    position: absolute;
-    z-index: 3;
     padding: 9px 12px;
-    color: var(--text);
     background: #19344b;
-    border: 1px solid rgba(25, 198, 176, 0.25);
-    border-radius: 8px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    font-family: var(--font-code);
+    border-color: rgba(25, 198, 176, .25);
     font-size: 10px;
     white-space: nowrap;
 }
@@ -900,8 +961,10 @@ section {
 }
 
 /* ---------- 8. SECTION HEADINGS ---------- */
+
 .section-kicker {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 13px;
     margin-bottom: 22px;
@@ -947,9 +1010,10 @@ section {
 }
 
 /* ---------- 9. STATEMENT ---------- */
+
 .statement-section {
     padding: 70px 0;
-    background: rgba(19, 43, 64, 0.58);
+    background: rgba(19, 43, 64, .58);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
@@ -957,8 +1021,8 @@ section {
 .statement-layout {
     display: grid;
     grid-template-columns: 170px minmax(0, 1fr);
-    gap: 45px;
     align-items: start;
+    gap: 45px;
 }
 
 .statement-label {
@@ -997,6 +1061,7 @@ section {
 }
 
 /* ---------- 10. SUBJECTS ---------- */
+
 .subjects-section {
     padding-top: 115px;
 }
@@ -1017,7 +1082,7 @@ section {
 
 .subject-card:hover {
     padding-inline: 23px;
-    background: rgba(25, 198, 176, 0.045);
+    background: rgba(25, 198, 176, .045);
 }
 
 .subject-number {
@@ -1032,8 +1097,8 @@ section {
     width: 52px;
     height: 52px;
     color: var(--teal);
-    background: rgba(25, 198, 176, 0.08);
-    border: 1px solid rgba(25, 198, 176, 0.18);
+    background: rgba(25, 198, 176, .08);
+    border: 1px solid rgba(25, 198, 176, .18);
     border-radius: 13px;
     font-size: 21px;
     transition: background var(--transition);
@@ -1105,17 +1170,24 @@ section {
 }
 
 /* ---------- 11. TECHNOLOGY STACK ---------- */
+
 .technology-section {
-    background: rgba(17, 39, 59, 0.55);
+    background: rgba(17, 39, 59, .55);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
 
 .technology-wrapper {
     display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-    gap: 70px;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
     align-items: center;
+    gap: 70px;
+}
+
+.technology-intro,
+.technology-grid,
+.technology-item {
+    min-width: 0;
 }
 
 .technology-intro h2,
@@ -1144,34 +1216,34 @@ section {
     display: flex;
     align-items: center;
     gap: 14px;
-    min-width: 0;
     padding: 18px 15px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, .025);
     border: 1px solid var(--border);
     border-radius: 12px;
     transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
 
 .technology-item:hover {
-    background: rgba(25, 198, 176, 0.06);
-    border-color: rgba(25, 198, 176, 0.35);
+    background: rgba(25, 198, 176, .06);
+    border-color: rgba(25, 198, 176, .35);
     transform: translateY(-3px);
 }
 
 .tech-symbol {
     display: grid;
-    place-items: center;
     flex: 0 0 42px;
+    place-items: center;
     width: 42px;
     height: 42px;
     color: var(--teal);
-    background: rgba(25, 198, 176, 0.09);
+    background: rgba(25, 198, 176, .09);
     border-radius: 10px;
     font-size: 20px;
 }
 
 .technology-item > div:last-child {
     display: flex;
+    flex: 1;
     flex-direction: column;
     min-width: 0;
 }
@@ -1179,7 +1251,7 @@ section {
 .technology-item strong {
     color: var(--text);
     font-size: 13px;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
 }
 
 .technology-item span {
@@ -1188,6 +1260,7 @@ section {
 }
 
 /* ---------- 12. LEARNING JOURNEY ---------- */
+
 .learning-heading,
 .levels-header {
     display: flex;
@@ -1209,12 +1282,13 @@ section {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 22px;
+    min-width: 0;
 }
 
 .journey-item {
     min-width: 0;
     padding: 22px 19px;
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, .02);
     border: 1px solid var(--border);
     border-radius: 14px;
     transition: border-color var(--transition), transform var(--transition);
@@ -1222,7 +1296,7 @@ section {
 
 .journey-item:hover,
 .journey-item.active {
-    border-color: rgba(25, 198, 176, 0.38);
+    border-color: rgba(25, 198, 176, .38);
     transform: translateY(-4px);
 }
 
@@ -1230,15 +1304,20 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
+    min-width: 0;
 }
 
 .journey-top > span {
+    min-width: 0;
     color: var(--muted);
     font-family: var(--font-code);
     font-size: 11px;
+    overflow-wrap: normal;
 }
 
 .journey-top i {
+    flex: 0 0 auto;
     color: var(--teal);
     font-size: 23px;
 }
@@ -1253,6 +1332,8 @@ section {
 .journey-item h3 {
     margin-bottom: 12px;
     font-size: 19px;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .journey-item p {
@@ -1262,15 +1343,16 @@ section {
 }
 
 /* ---------- 13. PROJECT SHOWCASE ---------- */
+
 .projects-section {
-    background: rgba(17, 39, 59, 0.45);
+    background: rgba(17, 39, 59, .45);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
 
 .projects-layout {
     display: grid;
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
     align-items: center;
     gap: 65px;
 }
@@ -1307,7 +1389,7 @@ section {
     color: var(--teal);
     font-family: var(--font-code);
     font-size: 9px;
-    letter-spacing: 0.8px;
+    letter-spacing: .8px;
 }
 
 .project-card-header strong {
@@ -1316,6 +1398,7 @@ section {
 }
 
 .project-number {
+    flex: 0 0 auto;
     color: var(--teal);
     font-family: var(--font-code);
     font-size: 21px;
@@ -1325,7 +1408,7 @@ section {
     margin: 20px;
     overflow: hidden;
     background: #091725;
-    border: 1px solid rgba(190, 215, 240, 0.1);
+    border: 1px solid rgba(190, 215, 240, .1);
     border-radius: 10px;
 }
 
@@ -1334,11 +1417,12 @@ section {
     align-items: center;
     gap: 6px;
     padding: 12px 13px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, .025);
     border-bottom: 1px solid var(--border);
 }
 
 .code-header > span {
+    flex: 0 0 7px;
     width: 7px;
     height: 7px;
     background: #4f6a80;
@@ -1418,7 +1502,7 @@ section {
 .level-tags span {
     padding: 6px 9px;
     color: var(--text-soft);
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, .04);
     border: 1px solid var(--border);
     border-radius: 5px;
     font-family: var(--font-code);
@@ -1434,11 +1518,11 @@ section {
 
 .mini-project-card {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 7px;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
+    gap: 7px;
     padding: 16px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, .025);
     border: 1px solid var(--border);
     border-radius: 10px;
     transition: border-color var(--transition);
@@ -1466,6 +1550,7 @@ section {
 }
 
 /* ---------- 14. BENEFITS ---------- */
+
 .benefits-heading {
     max-width: 730px;
     margin-bottom: 45px;
@@ -1481,7 +1566,7 @@ section {
     position: relative;
     min-width: 0;
     padding: 25px 21px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, .025);
     border: 1px solid var(--border);
     border-radius: 14px;
     transition: transform var(--transition), border-color var(--transition);
@@ -1489,7 +1574,7 @@ section {
 
 .benefit-card:hover,
 .benefit-card.featured {
-    border-color: rgba(25, 198, 176, 0.3);
+    border-color: rgba(25, 198, 176, .3);
 }
 
 .benefit-card:hover {
@@ -1509,7 +1594,7 @@ section {
     height: 48px;
     margin: 27px 0 20px;
     color: var(--teal);
-    background: rgba(25, 198, 176, 0.09);
+    background: rgba(25, 198, 176, .09);
     border-radius: 12px;
     font-size: 21px;
 }
@@ -1526,15 +1611,16 @@ section {
 }
 
 /* ---------- 15. ABOUT THE TUTOR ---------- */
+
 .about-section {
-    background: rgba(17, 39, 59, 0.45);
+    background: rgba(17, 39, 59, .45);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
 }
 
 .about-wrapper {
     display: grid;
-    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
     align-items: center;
     gap: 85px;
 }
@@ -1558,8 +1644,8 @@ section {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(180, 210, 240, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(180, 210, 240, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(180, 210, 240, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(180, 210, 240, .05) 1px, transparent 1px);
     background-size: 25px 25px;
     border-radius: inherit;
     pointer-events: none;
@@ -1589,6 +1675,7 @@ section {
     display: flex;
     align-items: center;
     gap: 12px;
+    max-width: calc(100% - 8px);
     padding: 13px 17px;
     background: #193b54;
     border: 1px solid var(--border);
@@ -1597,6 +1684,7 @@ section {
 }
 
 .portrait-badge > i {
+    flex: 0 0 auto;
     color: var(--teal);
     font-size: 24px;
 }
@@ -1665,7 +1753,7 @@ section {
     color: var(--muted);
     font-family: var(--font-code);
     font-size: 9px;
-    letter-spacing: 0.8px;
+    letter-spacing: .8px;
 }
 
 .about-details strong {
@@ -1675,6 +1763,7 @@ section {
 }
 
 /* ---------- 16. LEARNING LEVELS ---------- */
+
 .levels-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1684,7 +1773,7 @@ section {
 .level-card {
     min-width: 0;
     padding: 27px;
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255, 255, 255, .025);
     border: 1px solid var(--border);
     border-radius: 15px;
     transition: transform var(--transition), border-color var(--transition);
@@ -1692,7 +1781,7 @@ section {
 
 .level-card:hover,
 .level-card.featured-level {
-    border-color: rgba(25, 198, 176, 0.35);
+    border-color: rgba(25, 198, 176, .35);
 }
 
 .level-card:hover {
@@ -1703,6 +1792,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
     margin-bottom: 27px;
 }
 
@@ -1743,6 +1833,7 @@ section {
 }
 
 /* ---------- 17. CALL TO ACTION ---------- */
+
 .cta-section {
     padding-top: 45px;
 }
@@ -1750,13 +1841,13 @@ section {
 .cta-wrapper {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(200px, 0.55fr);
+    grid-template-columns: minmax(0, 1fr) minmax(200px, .55fr);
     align-items: center;
     gap: 35px;
     overflow: hidden;
     padding: 65px;
     background: linear-gradient(125deg, #163b50, #123047 65%, #10243a);
-    border: 1px solid rgba(25, 198, 176, 0.24);
+    border: 1px solid rgba(25, 198, 176, .24);
     border-radius: 24px;
 }
 
@@ -1824,6 +1915,7 @@ section {
 }
 
 .cta-email i {
+    flex: 0 0 auto;
     color: var(--teal);
 }
 
@@ -1835,6 +1927,7 @@ section {
     position: relative;
     display: grid;
     place-items: center;
+    min-width: 0;
     min-height: 250px;
 }
 
@@ -1842,14 +1935,14 @@ section {
     position: absolute;
     width: 210px;
     height: 210px;
-    border: 1px solid rgba(25, 198, 176, 0.3);
+    border: 1px solid rgba(25, 198, 176, .3);
     border-radius: 50%;
 }
 
 .circle-two {
     width: 160px;
     height: 160px;
-    border-color: rgba(25, 198, 176, 0.5);
+    border-color: rgba(25, 198, 176, .5);
 }
 
 .cta-code {
@@ -1876,7 +1969,7 @@ section {
     position: absolute;
     width: 200px;
     height: 200px;
-    border: 1px solid rgba(25, 198, 176, 0.08);
+    border: 1px solid rgba(25, 198, 176, .08);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -1894,6 +1987,7 @@ section {
 }
 
 /* ---------- 18. FOOTER ---------- */
+
 .site-footer {
     position: relative;
     z-index: 1;
@@ -1904,12 +1998,13 @@ section {
 
 .footer-main {
     display: grid;
-    grid-template-columns: 1.5fr 0.8fr 1fr 1.25fr;
+    grid-template-columns: 1.5fr .8fr 1fr 1.25fr;
     gap: 45px;
     padding: 65px 0 50px;
 }
 
-.footer-brand {
+.footer-brand,
+.footer-column {
     min-width: 0;
 }
 
@@ -1922,6 +2017,7 @@ section {
 
 .footer-socials {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -1931,7 +2027,7 @@ section {
     width: 38px;
     height: 38px;
     color: var(--text-soft);
-    background: rgba(255, 255, 255, 0.035);
+    background: rgba(255, 255, 255, .035);
     border: 1px solid var(--border);
     border-radius: 9px;
     transition: all var(--transition);
@@ -1948,7 +2044,6 @@ section {
     flex-direction: column;
     align-items: flex-start;
     gap: 11px;
-    min-width: 0;
 }
 
 .footer-column > span {
@@ -1972,13 +2067,14 @@ section {
 
 .footer-contact > a:first-of-type {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 9px;
     color: var(--white);
     font-weight: 700;
 }
 
 .footer-contact > a:first-of-type i {
+    flex: 0 0 auto;
     color: var(--teal);
 }
 
@@ -2001,6 +2097,7 @@ section {
 }
 
 /* ---------- 19. BACK TO TOP ---------- */
+
 .back-to-top {
     position: fixed;
     right: 24px;
@@ -2014,7 +2111,7 @@ section {
     background: var(--teal);
     border: none;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .25);
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
@@ -2034,22 +2131,1236 @@ section {
 }
 
 /* ---------- 20. ACCESSIBILITY ---------- */
+
 a:focus-visible,
-button:focus-visible {
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
     outline: 2px solid var(--teal);
     outline-offset: 4px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+/* =========================================================
+   RESPONSIVE LAYOUT
+========================================================= */
+
+/* ---------- 21. SMALL DESKTOPS AND TABLETS ---------- */
+
+@media (max-width: 1199.98px) {
+    :root {
+        --container-width: 960px;
+        --header-height: 74px;
+    }
+
+    .site-header .navbar > .container {
+        gap: 12px;
+    }
+
+    .brand-logo {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .brand-content strong {
+        font-size: 15px;
+        letter-spacing: .8px;
+    }
+
+    .brand-content small {
+        font-size: 8px;
+        letter-spacing: 1.8px;
+    }
+
+    .site-header .navbar-nav {
+        gap: 0;
+    }
+
+    .site-header .nav-link {
+        padding-inline: 8px;
+        font-size: 12px;
+    }
+
+    .site-header .nav-link::after {
+        right: 8px;
+        left: 8px;
+    }
+
+    .nav-cta {
+        gap: 7px;
+        margin-left: 3px;
+        padding-inline: 11px;
+        font-size: 11px;
+    }
+
+    .hero-layout {
+        gap: 30px;
+    }
+
+    .hero-title {
+        font-size: clamp(42px, 5vw, 62px);
+        letter-spacing: -2.5px;
+    }
+
+    .hero-visual {
+        min-height: 440px;
+    }
+
+    .learning-dashboard {
+        padding: 21px;
+    }
+
+    .technology-wrapper,
+    .projects-layout,
+    .about-wrapper {
+        gap: 40px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .learning-journey {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 38px;
     }
 }
 
+/* ---------- 22. MOBILE NAVIGATION AND TABLET LAYOUT ---------- */
 
+@media (max-width: 991.98px) {
+    :root {
+        --header-height: 70px;
+    }
 
+    .container {
+        width: calc(100% - 40px);
+        max-width: 760px;
+    }
+
+    /* Mobile navigation */
+
+    .site-header .navbar {
+        padding-block: 10px;
+    }
+
+    .site-header .navbar > .container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .brand {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 9px;
+    }
+
+    .brand-logo {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .brand-content strong {
+        font-size: 15px;
+        letter-spacing: .6px;
+    }
+
+    .brand-content small {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .custom-toggler {
+        display: block;
+        margin-left: auto;
+    }
+
+    .site-header .navbar-collapse {
+        flex-basis: 100%;
+        width: 100%;
+        flex-grow: 0;
+        min-width: 0;
+        margin-top: 8px;
+        padding: 8px 0 4px;
+    }
+
+    /* Bootstrap controls .show and .collapsing.
+       Do not force the collapse open with custom display rules. */
+
+    .site-header .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 3px;
+        width: 100%;
+        padding: 10px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 13px;
+    }
+
+    .site-header .navbar-nav .nav-item {
+        width: 100%;
+    }
+
+    .site-header .nav-link {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 43px;
+        padding: 11px 13px;
+        white-space: normal;
+        border-radius: 7px;
+        font-size: 14px;
+    }
+
+    .site-header .nav-link:hover,
+    .site-header .nav-link.active {
+        color: var(--teal);
+        background: rgba(25, 198, 176, .07);
+    }
+
+    .site-header .nav-link::after {
+        display: none;
+    }
+
+    .site-header .navbar-collapse .nav-cta {
+        display: flex;
+        width: 100%;
+        min-height: 45px;
+        margin: 10px 0 0;
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+
+    /* Hero */
+
+    .hero-section {
+        padding: 65px 0 75px;
+    }
+
+    .hero-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .hero-content {
+        max-width: 720px;
+    }
+
+    .hero-title {
+        max-width: 650px;
+        font-size: clamp(42px, 7vw, 65px);
+        letter-spacing: -2.5px;
+    }
+
+    .hero-description {
+        max-width: 620px;
+        font-size: 15px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 590px;
+        min-height: 0;
+        margin-inline: auto;
+        padding: 35px 12px 40px;
+    }
+
+    .learning-dashboard {
+        width: 100%;
+        max-width: 475px;
+    }
+
+    .tech-php {
+        left: 0;
+    }
+
+    .tech-laravel {
+        right: 0;
+    }
+
+    .tech-js {
+        right: 0;
+    }
+
+    /* Section spacing */
+
+    .section-padding {
+        padding-block: 75px;
+    }
+
+    .section-header,
+    .learning-heading,
+    .levels-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 35px;
+    }
+
+    .section-description,
+    .learning-heading > p,
+    .levels-header > p {
+        max-width: 650px;
+    }
+
+    .statement-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .statement-label {
+        padding-top: 0;
+    }
+
+    .subjects-section {
+        padding-top: 75px;
+    }
+
+    .technology-wrapper,
+    .projects-layout,
+    .about-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 38px;
+    }
+
+    .technology-intro,
+    .projects-intro,
+    .about-content {
+        max-width: 750px;
+    }
+
+    .technology-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-showcase {
+        width: 100%;
+        max-width: 700px;
+        margin-inline: auto;
+    }
+
+    .about-visual {
+        width: 100%;
+        max-width: 500px;
+        margin-inline: auto;
+    }
+
+    .portrait-frame {
+        max-width: 370px;
+    }
+
+    .levels-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cta-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+        padding: 42px;
+    }
+
+    .cta-visual {
+        min-height: 190px;
+    }
+
+    .cta-circle {
+        width: 170px;
+        height: 170px;
+    }
+
+    .circle-two {
+        width: 125px;
+        height: 125px;
+    }
+
+    .site-footer {
+        margin-top: 70px;
+    }
+}
+
+/* ---------- 23. MOBILE PHONES ---------- */
+
+@media (max-width: 767.98px) {
+    .container {
+        width: calc(100% - 32px);
+        max-width: 560px;
+    }
+
+    .section-padding {
+        padding-block: 60px;
+    }
+
+    /* Navigation */
+
+    .brand {
+        gap: 8px;
+    }
+
+    .brand-logo {
+        flex-basis: 36px;
+        width: 36px;
+        height: 36px;
+    }
+
+    .brand-content strong {
+        font-size: 13px;
+        letter-spacing: .5px;
+    }
+
+    .brand-content small {
+        margin-top: 4px;
+        font-size: 7px;
+        letter-spacing: 1.3px;
+    }
+
+    .custom-toggler {
+        width: 41px;
+        height: 40px;
+        padding: 9px;
+    }
+
+    /* Hero */
+
+    .hero-section {
+        padding: 48px 0 55px;
+    }
+
+    .hero-layout {
+        gap: 20px;
+    }
+
+    .hero-status {
+        gap: 8px;
+        margin-bottom: 22px;
+        font-size: 9px;
+        line-height: 1.8;
+        letter-spacing: .5px;
+    }
+
+    .status-line {
+        flex-basis: 22px;
+        width: 22px;
+    }
+
+    .hero-title {
+        margin-bottom: 20px;
+        font-size: clamp(35px, 9vw, 49px);
+        letter-spacing: -1.6px;
+        line-height: 1.13;
+    }
+
+    .hero-description {
+        margin-bottom: 24px;
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary-custom,
+    .btn-outline-custom {
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+
+    .btn-text-custom {
+        justify-content: center;
+        min-height: 42px;
+    }
+
+    .hero-trust {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .trust-block {
+        flex: 1 1 110px;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .trust-block strong {
+        font-size: 20px;
+    }
+
+    .trust-block span {
+        font-size: 10px;
+    }
+
+    .trust-divider {
+        display: none;
+    }
+
+    /* Dashboard */
+
+    .hero-visual {
+        display: block;
+        padding: 25px 0 10px;
+    }
+
+    .learning-dashboard {
+        max-width: 100%;
+        padding: 17px;
+        border-radius: 15px;
+    }
+
+    .dashboard-header {
+        gap: 10px;
+        margin-bottom: 17px;
+    }
+
+    .dashboard-overline {
+        font-size: 8px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 19px;
+    }
+
+    .dashboard-menu {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .dashboard-profile {
+        flex-wrap: wrap;
+        gap: 9px;
+        padding: 11px;
+        margin-bottom: 15px;
+    }
+
+    .profile-avatar {
+        flex-basis: 37px;
+        width: 37px;
+        height: 37px;
+    }
+
+    .profile-details {
+        flex: 1 1 calc(100% - 60px);
+    }
+
+    .profile-details strong {
+        font-size: 11px;
+    }
+
+    .profile-details span {
+        font-size: 9px;
+    }
+
+    .profile-status {
+        margin-left: 46px;
+        font-size: 9px;
+    }
+
+    .skills-container {
+        gap: 9px;
+    }
+
+    .skill-card {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .skill-icon {
+        flex-basis: 35px;
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .skill-title {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .skill-title strong {
+        font-size: 10px;
+    }
+
+    .skill-title > span {
+        font-size: 9px;
+    }
+
+    .dashboard-footer {
+        margin-top: 15px;
+        padding-top: 13px;
+    }
+
+    .dashboard-footer strong {
+        font-size: 11px;
+    }
+
+    .focus-icon {
+        flex-basis: 32px;
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Floating decorations overlap on small screens. */
+
+    .visual-label,
+    .floating-tech,
+    .visual-note {
+        display: none;
+    }
+
+    /* Headings */
+
+    .section-kicker {
+        gap: 9px;
+        margin-bottom: 15px;
+        font-size: 9px;
+        letter-spacing: .6px;
+        line-height: 1.8;
+    }
+
+    .section-title {
+        font-size: clamp(29px, 7.5vw, 39px);
+        letter-spacing: -1px;
+        line-height: 1.2;
+    }
+
+    .section-description {
+        font-size: 13px;
+        line-height: 1.8;
+    }
+
+    .section-header,
+    .learning-heading,
+    .levels-header {
+        gap: 15px;
+        margin-bottom: 28px;
+    }
+
+    /* Statement */
+
+    .statement-section {
+        padding: 45px 0;
+    }
+
+    .statement-layout {
+        gap: 15px;
+    }
+
+    .statement-large {
+        font-size: clamp(23px, 6vw, 30px);
+        letter-spacing: -.5px;
+        line-height: 1.5;
+    }
+
+    /* Subjects */
+
+    .subjects-section {
+        padding-top: 60px;
+    }
+
+    .subject-card {
+        grid-template-columns: 25px 40px minmax(0, 1fr);
+        align-items: start;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .subject-card:hover {
+        padding-inline: 0;
+    }
+
+    .subject-number {
+        padding-top: 12px;
+        font-size: 10px;
+    }
+
+    .subject-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 17px;
+        border-radius: 10px;
+    }
+
+    .subject-content {
+        padding-top: 2px;
+    }
+
+    .subject-content h3 {
+        margin: 6px 0;
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .subject-category {
+        font-size: 8px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .subject-content p {
+        font-size: 12px;
+        line-height: 1.75;
+    }
+
+    .subject-arrow {
+        display: none;
+    }
+
+    .section-more-link {
+        justify-content: flex-start;
+        margin-top: 22px;
+    }
+
+    .section-more-link a {
+        gap: 9px;
+        font-size: 12px;
+    }
+
+    /* Technology */
+
+    .technology-wrapper,
+    .projects-layout,
+    .about-wrapper {
+        gap: 27px;
+    }
+
+    .technology-intro h2,
+    .projects-intro h2,
+    .benefits-heading h2,
+    .levels-header h2 {
+        margin-bottom: 17px;
+        font-size: clamp(29px, 7vw, 37px);
+        letter-spacing: -1px;
+        line-height: 1.25;
+    }
+
+    .technology-intro p,
+    .projects-intro p {
+        margin-bottom: 20px;
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .technology-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+    }
+
+    .technology-item {
+        gap: 12px;
+        padding: 13px;
+    }
+
+    .tech-symbol {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+    }
+
+    .technology-item strong {
+        font-size: 12px;
+    }
+
+    .technology-item span {
+        font-size: 10px;
+    }
+
+    /* Projects */
+
+    .project-card-header {
+        gap: 10px;
+        padding: 16px;
+    }
+
+    .project-card-header span {
+        font-size: 8px;
+        line-height: 1.6;
+    }
+
+    .project-card-header strong {
+        font-size: 12px;
+    }
+
+    .project-number {
+        font-size: 18px;
+    }
+
+    .code-window {
+        margin: 12px;
+    }
+
+    .code-content {
+        padding: 13px 9px;
+        font-size: 9px;
+        line-height: 2.2;
+    }
+
+    .code-number {
+        width: 21px;
+    }
+
+    .code-indent {
+        padding-left: 12px;
+    }
+
+    .project-tags {
+        gap: 6px;
+        padding: 0 12px 16px;
+    }
+
+    .project-tags span,
+    .level-tags span {
+        padding: 5px 7px;
+        font-size: 8px;
+    }
+
+    .mini-projects {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+        margin-top: 10px;
+    }
+
+    .mini-project-card {
+        padding: 13px;
+    }
+
+    .mini-project-card strong {
+        font-size: 12px;
+    }
+
+    /* Learning journey */
+
+    .learning-journey {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .journey-item {
+        padding: 19px;
+    }
+
+    .journey-top {
+        flex-wrap: nowrap;
+    }
+
+    .journey-top > span {
+        font-size: 10px;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .journey-line {
+        margin: 17px 0;
+    }
+
+    .journey-item h3 {
+        font-size: 17px;
+        line-height: 1.35;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+
+    .journey-item p {
+        font-size: 12px;
+    }
+
+    /* Benefits */
+
+    .benefits-heading {
+        margin-bottom: 28px;
+    }
+
+    .benefits-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 11px;
+    }
+
+    .benefit-card {
+        padding: 20px;
+    }
+
+    .benefit-icon {
+        width: 43px;
+        height: 43px;
+        margin: 18px 0 15px;
+        font-size: 19px;
+    }
+
+    .benefit-card h3 {
+        font-size: 16px;
+    }
+
+    .benefit-card p {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    /* About */
+
+    .about-visual {
+        padding: 8px 12px;
+    }
+
+    .portrait-frame {
+        max-width: 330px;
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .portrait-image {
+        border-radius: 12px;
+    }
+
+    .portrait-badge {
+        right: -5px;
+        bottom: 25px;
+        gap: 9px;
+        padding: 10px 12px;
+    }
+
+    .portrait-badge > i {
+        font-size: 20px;
+    }
+
+    .portrait-badge strong {
+        font-size: 10px;
+    }
+
+    .portrait-badge span {
+        font-size: 8px;
+    }
+
+    .about-content h2 {
+        margin-bottom: 17px;
+        font-size: clamp(32px, 8vw, 42px);
+        letter-spacing: -1.3px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .about-content .about-lead {
+        font-size: 15px;
+    }
+
+    .about-details {
+        gap: 16px 12px;
+        margin: 22px 0;
+        padding: 18px 0;
+    }
+
+    .about-details span {
+        font-size: 8px;
+        line-height: 1.7;
+    }
+
+    .about-details strong {
+        font-size: 11px;
+    }
+
+    /* Learning levels */
+
+    .levels-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .level-card {
+        padding: 22px;
+    }
+
+    .level-top {
+        margin-bottom: 20px;
+    }
+
+    .level-card h3 {
+        font-size: 19px;
+    }
+
+    .level-card p {
+        min-height: 0;
+        margin-bottom: 18px;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    /* CTA */
+
+    .cta-section {
+        padding-top: 15px;
+    }
+
+    .cta-wrapper {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        padding: 28px 21px;
+        border-radius: 17px;
+    }
+
+    .cta-label {
+        margin-bottom: 15px;
+        font-size: 9px;
+    }
+
+    .cta-content h2 {
+        margin-bottom: 15px;
+        font-size: clamp(30px, 8vw, 39px);
+        letter-spacing: -1px;
+        line-height: 1.25;
+    }
+
+    .cta-content > p {
+        font-size: 13px;
+        line-height: 1.85;
+    }
+
+    .cta-actions {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 13px;
+        margin-top: 20px;
+    }
+
+    .btn-white-custom {
+        width: 100%;
+        min-height: 47px;
+        padding: 12px;
+    }
+
+    .cta-email {
+        justify-content: center;
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .cta-visual {
+        min-height: 155px;
+    }
+
+    .cta-circle {
+        width: 140px;
+        height: 140px;
+    }
+
+    .circle-two {
+        width: 105px;
+        height: 105px;
+    }
+
+    .cta-code strong {
+        font-size: 22px;
+    }
+
+    .cta-decoration {
+        display: none;
+    }
+
+    /* Footer */
+
+    .site-footer {
+        margin-top: 50px;
+    }
+
+    .footer-main {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 40px 0 30px;
+    }
+
+    .footer-brand > p {
+        max-width: 420px;
+        margin: 16px 0;
+        font-size: 12px;
+    }
+
+    .footer-column {
+        gap: 10px;
+    }
+
+    .footer-column > span {
+        margin-bottom: 5px;
+    }
+
+    .footer-column > a,
+    .footer-contact > p {
+        font-size: 12px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 18px 0;
+    }
+
+    .footer-bottom span {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    /* Back to top */
+
+    .back-to-top {
+        right: 14px;
+        bottom: 14px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+    }
+}
+
+/* ---------- 24. VERY SMALL PHONES ---------- */
+
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 26px);
+    }
+
+    .brand-content strong {
+        font-size: 12px;
+        letter-spacing: .3px;
+    }
+
+    .brand-content small {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    .custom-toggler {
+        width: 38px;
+        height: 38px;
+    }
+
+    .hero-title {
+        font-size: 34px;
+        letter-spacing: -1.3px;
+    }
+
+    .hero-status {
+        font-size: 8px;
+    }
+
+    .learning-dashboard {
+        padding: 12px;
+    }
+
+    .dashboard-header h2 {
+        font-size: 17px;
+    }
+
+    .skill-card {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .skill-icon {
+        flex-basis: 31px;
+        width: 31px;
+        height: 31px;
+        font-size: 14px;
+    }
+
+    .skill-title strong {
+        font-size: 9px;
+    }
+
+    .skill-title > span {
+        font-size: 8px;
+    }
+
+    .subject-card {
+        grid-template-columns: 23px 34px minmax(0, 1fr);
+        gap: 7px;
+    }
+
+    .subject-icon {
+        width: 33px;
+        height: 33px;
+        font-size: 14px;
+    }
+
+    .subject-content h3 {
+        font-size: 14px;
+    }
+
+    .journey-item {
+        padding: 16px;
+    }
+
+    .journey-top > span {
+        font-size: 9px;
+        letter-spacing: 0;
+    }
+
+    .journey-item h3 {
+        font-size: 16px;
+    }
+
+    .about-details {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .cta-wrapper {
+        padding: 24px 16px;
+    }
+
+    .footer-main {
+        gap: 24px;
+    }
+}
+
+/* ---------- 25. TOUCH AND REDUCED MOTION ---------- */
+
+@media (hover: none) {
+    .project-card:hover,
+    .journey-item:hover,
+    .benefit-card:hover,
+    .level-card:hover,
+    .technology-item:hover {
+        transform: none;
+    }
+
+    .site-header .nav-link,
+    .nav-cta,
+    .btn-primary-custom,
+    .btn-white-custom,
+    .btn-text-custom,
+    .back-to-top {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+
+    .page-loader,
+    .loader-line span {
+        animation: none !important;
+        transition: none !important;
+    }
+}
