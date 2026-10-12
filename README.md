@@ -65,8 +65,6 @@ novatech-learning/
 │   ├── js/
 │   │   └── script.js
 │   └── images/
-├── api/
-│   └── contact.js
 ├── .gitignore
 ├── package.json
 ├── vercel.json
