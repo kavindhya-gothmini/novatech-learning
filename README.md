@@ -80,7 +80,7 @@ novatech-learning/
 1. Clone the repository:
 
    ```bash
-[   git clone YOUR_GITHUB_REPOSITORY_URL](https://github.com/kavindhya-gothmini/novatech-learning)
+(https://github.com/kavindhya-gothmini/novatech-learning)
    ```
 
 2. Open the project folder:
